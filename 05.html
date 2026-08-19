@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>왕초보 5. 시장 참여자(개인, 기관, 알고리즘) | DawnQT Intelligence Hub</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="왕초보 5. 시장 참여자(개인, 기관, 알고리즘) — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DawnQT Intelligence Hub">
+  <meta property="og:title" content="왕초보 5. 시장 참여자(개인, 기관, 알고리즘) | DawnQT Intelligence Hub">
+  <meta property="og:description" content="왕초보 5. 시장 참여자(개인, 기관, 알고리즘) — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <meta property="og:url" content="https://dawnqt-research.vercel.app/academy/beginner/05.html">
+  <meta property="og:image" content="https://dawnqt-research.vercel.app/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="왕초보 5. 시장 참여자(개인, 기관, 알고리즘) | DawnQT Intelligence Hub">
+  <meta name="twitter:description" content="왕초보 5. 시장 참여자(개인, 기관, 알고리즘) — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/academy.css">
+  <link rel="stylesheet" href="../../css/content-protect.css">
+  <link rel="stylesheet" href="../../css/membership.css">
+  <link rel="stylesheet" href="../../css/beehiiv.css">
+  <script src="../../js/content-protect.js"></script>
+  
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+  
+  <header class="border-b border-slate-800 bg-[#0b0f17]/95 sticky top-0 z-[9999] backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="../../index.html" class="text-2xl font-bold tracking-tight font-serif-title text-white">Dawn<span class="text-sky-400">QT</span> Academy</a>
+      
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+        <a href="../../index.html#daily" class="hover:text-sky-400 transition">Daily Brew</a>
+        <a href="../../academy.html" class="hover:text-sky-400 transition flex items-center space-x-1">
+          <span class="text-xs text-sky-400">★</span> <span>트레이딩 교실</span>
+        </a>
+        <a href="../../themes.html" class="hover:text-sky-400 transition">Themes & Alpha</a>
+        <a href="../../data-arc.html" class="hover:text-sky-400 transition">Data Arc</a>
+        <a href="../../trader-note.html" class="hover:text-sky-400 transition">Trader's Note</a>
+      </nav>
+      <div class="lang-switcher-cluster">
+        <div class="lang-switcher notranslate" id="lang-switcher" translate="no">
+          <select class="lang-switcher-select notranslate" aria-label="Language" translate="no">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="zh-CN">简体中文</option>
+            <option value="ja">日本語</option>
+            <option value="hi">हिन्दी</option>
+            <option value="pt">Português (Brasil)</option>
+          </select>
+        </div>
+        <button type="button" class="js-subscribe subscribe-btn bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold px-4 py-2 rounded-lg transition" data-member-open>Subscribe</button>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-6 py-10 w-full">
+    <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-8">
+      <article class="space-y-6 min-w-0">
+        <div class="text-xs text-slate-500 space-x-2">
+          <a href="../../academy.html" class="hover:text-sky-400">트레이딩 교실</a>
+          <span>/</span>
+          <a href="../../beginner.html" class="hover:text-sky-400">왕초보 실전 교실</a>
+          <span>/</span>
+          <span class="text-slate-400">05</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <a href="../../beginner.html" class="course-pill is-active bg-sky-500 border-sky-500 text-slate-950 text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">왕초보</a>
+        <a href="../../intermediate.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">중급자</a>
+        <a href="../../advanced.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">고급</a>
+        <a href="../../psychology.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">심리지혜</a>
+        </div>
+        <section class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] font-semibold text-sky-400 bg-sky-950/80 border border-sky-800/80 px-2 py-0.5 rounded">Stage 1</span>
+            <span class="text-xs text-slate-500">5 / 20</span>
+          </div>
+          <h1 class="text-2xl md:text-3xl font-normal font-serif-title text-white leading-snug">왕초보 5. 시장 참여자(개인, 기관, 알고리즘)</h1>
+        </section>
+        <div class="inner-box-bg rounded-xl p-5 border-l-2 border-sky-500 space-y-2">
+          <p class="text-[11px] font-semibold uppercase tracking-wider text-sky-400">한눈에 답</p>
+          <p class="text-sm text-slate-300 leading-relaxed">미국 주식시장의 하루 거래량 중 개인 투자자가 차지하는 비중은 20% 안팎이고, 나머지 대부분은 기관 투자자와 알고리즘(고빈도매매)이 만들어냅니다. 이 세 그룹은 자금 규모, 매매 속도, 목적이 완전히 다르기 때문에, 같은 캔들 하나도 어느 그룹이 만들었는지에 따라 전혀 다른 의미를 가집니다.</p>
+        </div>
+        <nav class="toc-mini inner-box-bg rounded-xl p-4 space-y-2">
+          <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">이 강의에서</p>
+          <ol class="space-y-1.5 text-xs">
+            <li><a href="#1-세-그룹-세-가지-다른-존재">1. 세 그룹, 세 가지 다른 존재</a></li>
+            <li><a href="#2-도시-교통으로-이해하는-세-그룹의-속도-차이">2. 도시 교통으로 이해하는 세 그룹의 속도 차이</a></li>
+            <li><a href="#3-시간대별로-달라지는-주도권">3. 시간대별로 달라지는 주도권</a></li>
+            <li><a href="#4-실제-사례로-보는-세-그룹의-힘">4. 실제 사례로 보는 세 그룹의 힘</a></li>
+            <li><a href="#5-이-지식이-실전에서-왜-중요한가">5. 이 지식이 실전에서 왜 중요한가</a></li>
+            <li><a href="#6-초보자가-반드시-빠지는-함정">6. 초보자가 반드시 빠지는 함정</a></li>
+            <li><a href="#7-지금-바로-확인해볼-것">7. 지금 바로 확인해볼 것</a></li>
+            <li><a href="#8-다음-이야기">8. 다음 이야기</a></li>
+          </ol>
+        </nav>
+        <div class="lesson-body">
+          <h2 id="1-세-그룹-세-가지-다른-존재">1. 세 그룹, 세 가지 다른 존재</h2>
+<h3 id="1-1-개인-투자자-retail">1-1. 개인 투자자(Retail)</h3>
+<p>증권사 앱으로 직접 매매하는 우리 같은 개인입니다. 한 사람이 움직이는 자금은 상대적으로 적지만, 그 수가 워낙 많아 합산하면 상당한 거래량을 만들어냅니다. 뉴스와 SNS에 민감하게 반응하는 경향이 있고, 장 시작 직후와 마감 직전에 매매가 몰리는 패턴을 보입니다.</p>
+<h3 id="1-2-기관-투자자-institutions">1-2. 기관 투자자(Institutions)</h3>
+<p>연기금, 뮤추얼펀드, 헤지펀드처럼 대규모 자금을 운용하는 조직입니다. 한 번의 매매 규모가 수백만 달러에서 수억 달러에 이르기도 합니다. 이렇게 큰 주문을 한 번에 시장에 내보내면 가격이 급격히 왜곡되기 때문에, 기관은 대개 하루 또는 며칠에 걸쳐 물량을 잘게 나눠 체결합니다.</p>
+<h3 id="1-3-알고리즘-algorithmic-trading-hft">1-3. 알고리즘(Algorithmic Trading, HFT)</h3>
+<p>컴퓨터 프로그램이 미리 정해진 규칙에 따라 자동으로 매매를 실행하는 방식입니다. 그중에서도 고빈도매매(HFT)는 몇 밀리초, 즉 눈 깜짝할 시간보다 훨씬 짧은 단위로 대량의 주문을 넣었다 취소하며 미세한 가격 차이를 노립니다. 미국 주식시장 전체 거래량의 절반 이상이 이런 알고리즘 기반 매매로 추정됩니다.</p>
+<h2 id="2-도시-교통으로-이해하는-세-그룹의-속도-차이">2. 도시 교통으로 이해하는 세 그룹의 속도 차이</h2>
+<p>이 세 그룹의 차이를 가장 직관적으로 보여주는 비유는 도시의 교통 흐름입니다. 개인 투자자는 일반 승용차와 같습니다. 각자 다른 목적지로, 다른 속도로, 감정에 따라(급하게 끼어들거나 갑자기 멈추는 식으로) 운전합니다. 기관 투자자는 대형 화물트럭과 같습니다. 방향은 뚜렷하지만 움직임이 느리고, 한 번 방향을 잡으면 쉽게 바꾸지 않습니다. 대신 그 크기 때문에 도로 전체(시장 전체)의 흐름에 가장 큰 영향을 줍니다. 알고리즘은 초고속으로 차선을 바꾸는 오토바이와 같습니다. 개별 움직임은 작아 보이지만, 그 빠른 반응 속도로 순간순간의 가격 흐름을 만듭니다.</p>
+<p>이 비유가 논리적으로 타당한 이유는, 세 그룹의 &quot;질량&quot;과 &quot;속도&quot;가 실제로 이런 관계를 갖기 때문입니다. 화물트럭(기관)은 질량은 크지만 가속이 느리고, 오토바이(알고리즘)는 질량은 작지만 가속이 매우 빠릅니다. 승용차(개인)는 그 중간이면서 가장 예측하기 어렵게 감정적으로 움직입니다. 실제 도로에서 교통 흐름이 이 세 종류 운전자의 상호작용으로 만들어지듯, 주가도 이 세 그룹의 상호작용으로 만들어집니다.</p>
+<h2 id="3-시간대별로-달라지는-주도권">3. 시간대별로 달라지는 주도권</h2>
+<p>하루 안에서도 어느 그룹이 주도권을 쥐는지가 계속 바뀝니다.</p>
+<div class="table-wrap"><table><thead><tr><th>시간대</th><th>주도 그룹 경향</th><th>근거</th></tr></thead><tbody><tr><td>장 시작 직후(9:30~10:00)</td><td>알고리즘</td><td>밤사이 쌓인 정보를 가장 빠르게 반영</td></tr><tr><td>장 중반(11:00~14:00)</td><td>기관</td><td>대량 주문을 상대적으로 조용한 시간에 분할 체결</td></tr><tr><td>장 마감 직전(15:30~16:00)</td><td>개인+알고리즘</td><td>개인의 당일 정산 매매와 알고리즘의 종가 관련 주문이 몰림</td></tr></tbody></table></div>
+<p>이 때문에 장 시작 직후는 가격이 가장 격렬하게 튀는 시간대이고, 장 중반은 상대적으로 안정적인 흐름을 보이는 경우가 많습니다.</p>
+<h2 id="4-실제-사례로-보는-세-그룹의-힘">4. 실제 사례로 보는 세 그룹의 힘</h2>
+<p>2021년 초 게임스탑(GME) 사태는 개인 투자자들이 인터넷 커뮤니티를 중심으로 결집해 며칠 만에 주가를 몇 배씩 끌어올린 사례입니다. 평소라면 기관과 알고리즘이 지배하는 시장에서, 대규모로 결집한 개인 투자자의 힘이 얼마나 클 수 있는지 보여준 이례적인 사건이었습니다. 반대로 2020년 3월 코로나 폭락 초기에는, 기관들의 대규모 리스크 회피 매도가 시작되자 알고리즘들이 그 매도 신호를 감지하고 동시다발적으로 추가 매도 주문을 쏟아내며 하락을 증폭시켰습니다. 개인 투자자들은 이 흐름을 뒤늦게 따라가며 저점 근처에서 공포 매도를 하는 경우가 많았습니다. 두 사례 모두, 시장을 움직이는 힘의 원천이 상황마다 다르다는 것을 보여줍니다.</p>
+<h2 id="5-이-지식이-실전에서-왜-중요한가">5. 이 지식이 실전에서 왜 중요한가</h2>
+<p>같은 캔들이라도 그 뒤에 어떤 그룹이 있는지에 따라 해석이 달라집니다. 장 시작 직후 거래량이 폭발하며 가격이 크게 튀었다면, 이는 알고리즘들이 밤사이 뉴스를 반영하며 만든 변동성일 가능성이 큽니다. 이런 순간은 방향성이 아직 불안정하기 때문에, 초보 단계에서는 이 시간대의 급격한 움직임을 그대로 뒤쫓기보다 한 걸음 물러나 지켜보는 것이 안전합니다. 반면 장 중반에 특정 종목이 거래량을 동반하며 꾸준히 한 방향으로 움직인다면, 이는 기관의 분할 매수·매도가 진행 중일 가능성을 시사하며, 상대적으로 더 신뢰할 만한 흐름일 수 있습니다.</p>
+<h2 id="6-초보자가-반드시-빠지는-함정">6. 초보자가 반드시 빠지는 함정</h2>
+<p><strong>장 시작 직후의 변동성을 기회로만 보는 것.</strong> 이 시간대는 알고리즘의 활동이 집중되어 방향을 예측하기 가장 어려운 시간이기도 합니다. 초보 단계에서는 관망하는 편이 낫습니다.</p>
+<p><strong>개인 투자자끼리의 SNS 열기를 시장 전체의 흐름으로 착각하는 것.</strong> 커뮤니티에서 화제가 되는 종목이라고 해서 기관과 알고리즘까지 같은 방향으로 움직이고 있다는 뜻은 아닙니다.</p>
+<h2 id="7-지금-바로-확인해볼-것">7. 지금 바로 확인해볼 것</h2>
+<ul><li class="task"><input type="checkbox" disabled>관심 종목의 하루 평균 거래량 중 장 시작 30분 동안 얼마나 체결되는지 확인해봤는가</li><li class="task"><input type="checkbox" disabled>오늘 하루 중 어느 시간대에 가격이 가장 크게 움직였는지, 그 시간대와 이번 챕터의 표를 비교해봤는가</li><li class="task"><input type="checkbox" disabled>관심 종목이 최근 SNS·커뮤니티에서 화제가 된 적이 있다면, 그것이 실제 거래량 증가로 이어졌는지 확인했는가</li></ul>
+<h2 id="8-다음-이야기">8. 다음 이야기</h2>
+<p>지금까지 시장이 무엇으로 이루어져 있고, 어떻게 움직이며, 누가 그 움직임을 만드는지 살펴봤습니다. 이제부터는 시선을 시장 전체에서 개별 기업으로 좁혀야 합니다. 결국 주식을 산다는 것은 특정 회사의 일부를 사는 것이므로, 그 회사가 실제로 돈을 벌고 있는지, 재정 상태는 건강한지를 읽는 능력이 필요합니다. 다음 챕터부터는 기업의 재무제표를 읽는 법을 하나씩 배워갑니다.</p>
+        </div>
+        <div class="pt-6 border-t border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <a href="04.html" class="lesson-link rounded-xl p-4 space-y-1 transition">
+            <p class="text-[11px] text-slate-500">&larr; 이전 강의</p>
+            <p class="text-sm text-white font-medium">왕초보 4. 주요 지수(S&amp;P500, 나스닥, 다우) 이해</p>
+          </a>
+          <a href="06.html" class="lesson-link rounded-xl p-4 space-y-1 transition md:text-right">
+            <p class="text-[11px] text-slate-500">다음 강의 &rarr;</p>
+            <p class="text-sm text-white font-medium">왕초보 6. 재무제표 기초</p>
+          </a>
+        </div>
+      </article>
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 space-y-3">
+          <div class="flex items-center justify-between px-1">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">과정 목차</p>
+            <a href="../../beginner.html" class="text-[11px] text-sky-400 hover:text-sky-300">전체 보기</a>
+          </div>
+          <div class="card-bg rounded-2xl p-3 max-h-[calc(100vh-8rem)] overflow-y-auto space-y-3">
+            
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">시장을 이해하다</p>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="01.html">01. 왕초보 1. 주식이란 무엇인가?</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="02.html">02. 왕초보 2. 주식 시장은 어떻게 움직이는가?</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="03.html">03. 왕초보 3. 미국 주식 시장의 구조</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="04.html">04. 왕초보 4. 주요 지수(S&amp;P500, 나스닥, 다우) 이해</a>
+            <a class="sidebar-link is-current block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="05.html">05. 왕초보 5. 시장 참여자(개인, 기관, 알고리즘)</a>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">숫자를 읽다</p>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="06.html">06. 왕초보 6. 재무제표 기초</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="07.html">07. 왕초보 7. 손익계산서 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="08.html">08. 왕초보 8. 대차대조표 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="09.html">09. 왕초보 9. 현금흐름표 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="10.html">10. 왕초보 10. 기업 가치 평가 기초</a>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">차트를 읽다</p>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="11.html">11. 왕초보 11. 캔들 차트 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="12.html">12. 왕초보 12. 추세와 패턴</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="13.html">13. 왕초보 13. 이동평균선(MA) 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="14.html">14. 왕초보 14. 거래량 분석</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="15.html">15. 왕초보 15. 주요 기술적 지표(RSI, MACD 등)</a>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">실전에 들어가다</p>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="16.html">16. 왕초보 16. 데이 트레이딩이란? (2026년 개정판)</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="17.html">17. 왕초보 17. 스윙 트레이딩 기초</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="18.html">18. 왕초보 18. 리스크 관리 기초</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="19.html">19. 왕초보 19. 포지션 사이징</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="20.html">20. 왕초보 20. 트레이딩 심리 기초 — 왕초보 과정을 마치며</a>
+          </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  
+  <footer class="border-t border-slate-800 py-8 mt-12 bg-[#0b0f17]">
+    <div class="max-w-7xl mx-auto px-6 text-center text-xs text-slate-500 space-y-4">
+      <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2" aria-label="Legal">
+        <a href="../../about.html" class="hover:text-sky-400 transition">About</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../contact.html" class="hover:text-sky-400 transition">Contact</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../privacy.html" class="hover:text-sky-400 transition">Privacy Policy</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../terms.html" class="hover:text-sky-400 transition">Terms of Use</a>
+      </nav>
+      <p>© 2026 DawnQT Research. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <div id="member-gate-modal" class="member-modal" hidden>
+    <div class="member-modal-backdrop" data-member-close></div>
+    <div class="member-modal-card member-modal-card--beehiiv" role="dialog" aria-modal="true" aria-labelledby="member-gate-title" tabindex="-1">
+      <button type="button" class="member-modal-x" data-member-close aria-label="닫기">×</button>
+      <p class="member-modal-kicker">Member Access</p>
+      <h2 id="member-gate-title">멤버십 전용 강의</h2>
+      <p class="member-modal-copy">DawnQT Intelligence Hub 멤버십 전용 강의입니다. 이메일 구독 시 순차적으로 열람 권한이 제공됩니다.</p>
+      <div class="beehiiv-embed-wrap beehiiv-embed-wrap--modal" data-beehiiv-mount></div>
+    </div>
+  </div>
+  <script src="../../js/lang-selector.js" defer></script>
+  <script src="../../js/membership.js" defer></script>
+  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+</body>
+</html>
