@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trader's Note | DawnQT Intelligence Hub</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="Trader's Note — field notes and market observations from DawnQT Intelligence Hub.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DawnQT Intelligence Hub">
+  <meta property="og:title" content="Trader's Note | DawnQT Intelligence Hub">
+  <meta property="og:description" content="Trader's Note — field notes and market observations from DawnQT Intelligence Hub.">
+  <meta property="og:url" content="https://dawnqt-research.vercel.app/trader-note.html">
+  <meta property="og:image" content="https://dawnqt-research.vercel.app/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trader's Note | DawnQT Intelligence Hub">
+  <meta name="twitter:description" content="Trader's Note — field notes and market observations from DawnQT Intelligence Hub.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { background-color: #0b0f17; color: #f1f5f9; font-family: 'Inter', sans-serif; }
+    .font-serif-title { font-family: 'Instrument Serif', serif; }
+    .card-bg { background-color: #161e2e; border: 1px solid #222d3d; }
+    .card-bg:hover { border-color: #334155; transition: all 0.2s ease-in-out; }
+    .inner-box-bg { background-color: #111827; border: 1px solid #1f2937; }
+    header { overflow: visible; z-index: 9999; }
+    .lang-switcher-cluster { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; position: relative; z-index: 9999; }
+    .lang-switcher { position: relative; z-index: 9999; flex-shrink: 0; }
+    .lang-switcher-select {
+      display: block; appearance: none; -webkit-appearance: none; height: 2.25rem; min-width: 10rem;
+      padding: 0 2rem 0 0.75rem; border: 1px solid #38bdf8; border-radius: 0.5rem;
+      background-color: #1e293b; color: #ffffff; font-size: 12px; font-weight: 600;
+      font-family: Inter, system-ui, sans-serif; cursor: pointer; z-index: 9999; position: relative; color-scheme: dark;
+    }
+    .lang-switcher-select option { background: #1e293b; color: #ffffff; }
+  </style>
+  <link rel="stylesheet" href="css/content-protect.css">
+  <link rel="stylesheet" href="css/membership.css">
+  <link rel="stylesheet" href="css/beehiiv.css">
+  <script src="js/content-protect.js"></script>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+  <header class="border-b border-slate-800 bg-[#0b0f17]/95 sticky top-0 z-[9999] backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-bold tracking-tight font-serif-title text-white">Dawn<span class="text-sky-400">QT</span> Research</a>
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+        <a href="index.html#daily" class="hover:text-sky-400 transition">Daily Brew</a>
+        <a href="academy.html" class="hover:text-sky-400 transition flex items-center space-x-1">
+          <span class="text-xs text-sky-400">★</span> <span>트레이딩 교실</span>
+        </a>
+        <a href="themes.html" class="hover:text-sky-400 transition">Themes & Alpha</a>
+        <a href="data-arc.html" class="hover:text-sky-400 transition">Data Arc</a>
+        <a href="trader-note.html" class="hover:text-sky-400 transition">Trader's Note</a>
+      </nav>
+      <div class="lang-switcher-cluster">
+        <div class="lang-switcher notranslate" id="lang-switcher" translate="no">
+          <select class="lang-switcher-select notranslate" aria-label="Language" translate="no">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="zh-CN">简体中文</option>
+            <option value="ja">日本語</option>
+            <option value="hi">हिन्दी</option>
+            <option value="pt">Português (Brasil)</option>
+          </select>
+        </div>
+        <button type="button" class="js-subscribe subscribe-btn bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold px-4 py-2 rounded-lg transition" data-member-open>Subscribe</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-8">
+    <section class="space-y-3">
+      <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Human Verification</span>
+      <h1 class="text-2xl md:text-3xl font-normal font-serif-title text-white">30-Sec Voice Memo &amp; Execution Log</h1>
+      <p class="text-sm text-slate-400 leading-relaxed max-w-3xl">
+        15-year trader's raw decision records, setups, and post-trade reviews. The tape is recorded before the story gets rewritten.
+      </p>
+    </section>
+
+    <section class="space-y-4">
+      <article class="card-bg rounded-2xl p-6 md:p-8 space-y-5">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <div class="space-y-2">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[11px] font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-2 py-0.5 rounded">Process Pass</span>
+              <span class="text-[11px] font-semibold text-sky-400 bg-sky-950/80 border border-sky-800/80 px-2 py-0.5 rounded">Long</span>
+            </div>
+            <h2 class="text-lg md:text-xl font-normal font-serif-title text-white">NVDA Breakout Squeeze</h2>
+          </div>
+          <div class="text-right space-y-1 shrink-0">
+            <p class="text-xs text-slate-300 font-medium">Aug 14, 2026</p>
+            <p class="text-[11px] text-slate-500">NY Regular Session</p>
+          </div>
+        </div>
+
+        <div class="inner-box-bg rounded-xl p-4 flex items-start gap-3">
+          <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-950/80 border border-sky-800/80 text-sky-400 text-xs font-bold">30s</span>
+          <p class="text-xs text-slate-400 leading-relaxed italic">
+            “Squeeze off on the 15. CVD flipping positive through VWAP. Stop under VWAP minus half ATR. Taking half at 1R extension, runner to 3R. No add.”
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-slate-300">
+          <div class="inner-box-bg p-4 rounded-xl space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Date &amp; Session</p>
+            <p class="text-slate-200">Aug 14, 2026 (NY Regular Session)</p>
+            <p class="text-slate-500">Entry window: first 90 minutes after the cash open.</p>
+          </div>
+          <div class="inner-box-bg p-4 rounded-xl space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Setup &amp; Trigger</p>
+            <p class="text-slate-200">TTM Squeeze Release + CVD Volume Inflow on 15m Chart</p>
+            <p class="text-slate-500">Level + squeeze-off + aggressive buy imbalance had to print together.</p>
+          </div>
+          <div class="inner-box-bg p-4 rounded-xl space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Risk / Reward</p>
+            <p class="text-slate-200">Planned 1:3.2</p>
+            <p class="text-slate-500">Stop at VWAP minus 0.5 ATR. Size fixed before the click.</p>
+          </div>
+          <div class="inner-box-bg p-4 rounded-xl space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Execution &amp; Psychology Review</p>
+            <p class="text-slate-200">Strict discipline maintained. 50% partial profit taken at target 1.</p>
+            <p class="text-slate-500">No size add. Runner managed to the planned 3.2R without moving the stop closer out of fear.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card-bg rounded-2xl p-6 md:p-8 space-y-5">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <div class="space-y-2">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[11px] font-semibold text-amber-400 bg-amber-950/80 border border-amber-800/80 px-2 py-0.5 rounded">Failure Review</span>
+              <span class="text-[11px] font-semibold text-slate-300 bg-slate-800 px-2 py-0.5 rounded">Short</span>
+            </div>
+            <h2 class="text-lg md:text-xl font-normal font-serif-title text-white">TSLA Mean Reversion Failure Review</h2>
+          </div>
+          <div class="text-right space-y-1 shrink-0">
+            <p class="text-xs text-slate-300 font-medium">Aug 12, 2026</p>
+            <p class="text-[11px] text-slate-500">NY Regular Session</p>
+          </div>
+        </div>
+
+        <div class="inner-box-bg rounded-xl p-4 flex items-start gap-3">
+          <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-950/80 border border-amber-800/80 text-amber-400 text-xs font-bold">30s</span>
+          <p class="text-xs text-slate-400 leading-relaxed italic">
+            “Faded the open into prior-day VWAP. Extension looked stretched. Stop is the opening drive high — if it goes, I am wrong. No second ticket.”
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-slate-300">
+          <div class="inner-box-bg p-4 rounded-xl space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Date &amp; Session</p>
+            <p class="text-slate-200">Aug 12, 2026 (NY Regular Session)</p>
+            <p class="text-slate-500">Opened a fade in the first 20 minutes. Closed the book after the stop.</p>
+          </div>
+          <div class="inner-box-bg p-4 rounded-xl space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Setup &amp; Trigger</p>
+            <p class="text-slate-200">Mean-reversion fade of a 2.1 ATR opening drive into prior-day VWAP.</p>
+            <p class="text-slate-500">CVD never showed absorption. The “stretch” was trend, not exhaustion.</p>
+          </div>
+          <div class="inner-box-bg p-4 rounded-xl space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Risk / Reward</p>
+            <p class="text-slate-200">Planned 1:2.0 — realized −1.0R</p>
+            <p class="text-slate-500">Stop at the opening-drive high. Hit cleanly. No widen, no average-down.</p>
+          </div>
+          <div class="inner-box-bg p-4 rounded-xl space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Execution &amp; Psychology Review</p>
+            <p class="text-slate-200">Stop-loss executed as written. Revenge re-entry was refused.</p>
+            <p class="text-slate-500">The urge to double size on the first bounce was recorded, then ignored. Process passed; thesis failed. That distinction is the whole point of the log.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card-bg rounded-2xl p-6 md:p-8 space-y-5">
+      <div class="space-y-2">
+        <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Operating System</span>
+        <h2 class="text-xl md:text-2xl font-normal font-serif-title text-white">Core Rules of the Trading Log</h2>
+        <p class="text-sm text-slate-400 leading-relaxed max-w-3xl">
+          Why recording a 30-second voice note creates asymmetry. Written journals get sanitized. Voice captures hesitation, FOMO, and the actual trigger before P&amp;L rewrites the memory. That raw tape lets you score process independent of outcome — and that is the only edge that compounds.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs text-slate-300">
+        <div class="inner-box-bg p-4 rounded-xl space-y-2">
+          <p class="font-semibold text-slate-200">1. Record before the story</p>
+          <p class="text-slate-400 leading-relaxed">The memo is spoken within 30 seconds of the decision. After the fill, memory starts editing.</p>
+        </div>
+        <div class="inner-box-bg p-4 rounded-xl space-y-2">
+          <p class="font-semibold text-slate-200">2. Voice first, text later</p>
+          <p class="text-slate-400 leading-relaxed">Emotion is data. Tone, pace, and certainty are part of the setup — they do not survive a tidy write-up.</p>
+        </div>
+        <div class="inner-box-bg p-4 rounded-xl space-y-2">
+          <p class="font-semibold text-slate-200">3. Split process from P&amp;L</p>
+          <p class="text-slate-400 leading-relaxed">A −1R with a clean stop is a pass. A green trade that broke a rule is a fail. Score the rule, not the dollar.</p>
+        </div>
+        <div class="inner-box-bg p-4 rounded-xl space-y-2">
+          <p class="font-semibold text-slate-200">4. Never edit the original</p>
+          <p class="text-slate-400 leading-relaxed">Annotations are allowed. Rewriting the first take is how revenge trading hides inside a “review.”</p>
+        </div>
+        <div class="inner-box-bg p-4 rounded-xl space-y-2">
+          <p class="font-semibold text-slate-200">5. One ticket, one memo</p>
+          <p class="text-slate-400 leading-relaxed">Adds, moves, and second entries need their own 30 seconds. Bundled stories hide the violation.</p>
+        </div>
+        <div class="inner-box-bg p-4 rounded-xl space-y-2">
+          <p class="font-semibold text-slate-200">6. Weekly R and violation count</p>
+          <p class="text-slate-400 leading-relaxed">Asymmetry shows up in fewer repeated mistakes, not in a single winner. Count rule breaks before you count P&amp;L.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800 py-8 mt-12 bg-[#0b0f17]">
+    <div class="max-w-7xl mx-auto px-6 text-center text-xs text-slate-500 space-y-4">
+      <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2" aria-label="Legal">
+        <a href="about.html" class="hover:text-sky-400 transition">About</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="contact.html" class="hover:text-sky-400 transition">Contact</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="privacy.html" class="hover:text-sky-400 transition">Privacy Policy</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="terms.html" class="hover:text-sky-400 transition">Terms of Use</a>
+      </nav>
+      <p>© 2026 DawnQT Research. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="js/lang-selector.js" defer></script>
+  <script src="js/membership.js" defer></script>
+  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+</body>
+</html>

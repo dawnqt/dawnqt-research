@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Arc (AI Signals) | DawnQT Intelligence Hub</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="Data Arc — AI signals and quantitative market intelligence from DawnQT Intelligence Hub.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DawnQT Intelligence Hub">
+  <meta property="og:title" content="Data Arc (AI Signals) | DawnQT Intelligence Hub">
+  <meta property="og:description" content="Data Arc — AI signals and quantitative market intelligence from DawnQT Intelligence Hub.">
+  <meta property="og:url" content="https://dawnqt-research.vercel.app/data-arc.html">
+  <meta property="og:image" content="https://dawnqt-research.vercel.app/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Arc (AI Signals) | DawnQT Intelligence Hub">
+  <meta name="twitter:description" content="Data Arc — AI signals and quantitative market intelligence from DawnQT Intelligence Hub.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #070b12; color: #f1f5f9; font-family: 'Inter', sans-serif; }
+    .font-serif-title { font-family: 'Instrument Serif', serif; }
+    .font-mono-data { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+    .card-bg { background-color: #0d1520; border: 1px solid #1a3a4a; }
+    .card-bg:hover { border-color: #22d3ee; transition: all 0.2s ease-in-out; }
+    .inner-box-bg { background-color: #081018; border: 1px solid #163044; }
+    .neon-panel {
+      background: linear-gradient(180deg, rgba(8, 24, 36, 0.95) 0%, rgba(7, 11, 18, 0.98) 100%);
+      border: 1px solid #22d3ee;
+      box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.08), 0 0 24px rgba(34, 211, 238, 0.12);
+    }
+    .status-fire {
+      color: #67e8f9;
+      background: rgba(8, 51, 68, 0.8);
+      border: 1px solid #22d3ee;
+      box-shadow: 0 0 10px rgba(34, 211, 238, 0.25);
+    }
+    .status-build {
+      color: #fde68a;
+      background: rgba(69, 26, 3, 0.55);
+      border: 1px solid #f59e0b;
+    }
+    .status-exhaust {
+      color: #fca5a5;
+      background: rgba(69, 10, 10, 0.55);
+      border: 1px solid #f87171;
+    }
+    .status-absorb {
+      color: #6ee7b7;
+      background: rgba(6, 46, 36, 0.55);
+      border: 1px solid #34d399;
+    }
+    table.data-table { width: 100%; border-collapse: collapse; }
+    table.data-table th {
+      text-align: left;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #67e8f9;
+      border-bottom: 1px solid #164e63;
+      padding: 0.75rem 0.85rem;
+    }
+    table.data-table td {
+      padding: 0.8rem 0.85rem;
+      border-bottom: 1px solid #122433;
+      font-size: 12px;
+    }
+    table.data-table tbody tr:hover { background: rgba(34, 211, 238, 0.04); }
+    header { overflow: visible; z-index: 9999; }
+    .lang-switcher-cluster { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; position: relative; z-index: 9999; }
+    .lang-switcher { position: relative; z-index: 9999; flex-shrink: 0; }
+    .lang-switcher-select {
+      display: block; appearance: none; -webkit-appearance: none; height: 2.25rem; min-width: 10rem;
+      padding: 0 2rem 0 0.75rem; border: 1px solid #38bdf8; border-radius: 0.5rem;
+      background-color: #1e293b; color: #ffffff; font-size: 12px; font-weight: 600;
+      font-family: Inter, system-ui, sans-serif; cursor: pointer; z-index: 9999; position: relative; color-scheme: dark;
+    }
+    .lang-switcher-select option { background: #1e293b; color: #ffffff; }
+  </style>
+  <link rel="stylesheet" href="css/content-protect.css">
+  <link rel="stylesheet" href="css/membership.css">
+  <link rel="stylesheet" href="css/beehiiv.css">
+  <script src="js/content-protect.js"></script>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+  <header class="border-b border-cyan-900/60 bg-[#070b12]/95 sticky top-0 z-[9999] backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <a href="index.html" class="text-2xl font-bold tracking-tight font-serif-title text-white">Dawn<span class="text-sky-400">QT</span> Research</a>
+      </div>
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+        <a href="index.html#daily" class="hover:text-sky-400 transition">Daily Brew</a>
+        <a href="academy.html" class="hover:text-sky-400 transition flex items-center space-x-1">
+          <span class="text-xs text-sky-400">★</span> <span>트레이딩 교실</span>
+        </a>
+        <a href="themes.html" class="hover:text-sky-400 transition">Themes & Alpha</a>
+        <a href="data-arc.html" class="text-cyan-400 transition">Data Arc</a>
+        <a href="trader-note.html" class="hover:text-sky-400 transition">Trader's Note</a>
+      </nav>
+      <div class="lang-switcher-cluster">
+        <div class="lang-switcher notranslate" id="lang-switcher" translate="no">
+          <select class="lang-switcher-select notranslate" aria-label="Language" translate="no">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="zh-CN">简体中文</option>
+            <option value="ja">日本語</option>
+            <option value="hi">हिन्दी</option>
+            <option value="pt">Português (Brasil)</option>
+          </select>
+        </div>
+        <button type="button" class="js-subscribe subscribe-btn bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold px-4 py-2 rounded-lg transition" data-member-open>Subscribe</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-8">
+    <section class="neon-panel rounded-2xl p-6 md:p-8 space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-400 font-mono-data">Quantitative Signal Dashboard</span>
+        <span class="text-[11px] font-mono-data text-cyan-300/80 border border-cyan-800/80 px-2 py-0.5 rounded">SCAN · 15:42:08 ET · MOCK</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-normal font-serif-title text-white">Data Arc</h1>
+      <p class="text-sm md:text-base text-slate-300 leading-relaxed max-w-3xl">
+        Algorithmic Market Signals &amp; Microstructure Data.
+      </p>
+      <p class="text-xs text-slate-500 leading-relaxed max-w-3xl font-mono-data">
+        TTM Squeeze · CVD Divergence · Options Flow / IV Surge — AI agents flag anomalous tape, not forecasts.
+      </p>
+    </section>
+
+    <section class="neon-panel rounded-2xl p-6 space-y-5">
+      <div class="flex flex-wrap items-end justify-between gap-3">
+        <div class="space-y-1">
+          <span class="text-[10px] font-semibold uppercase tracking-wider text-cyan-400 font-mono-data">Section 01</span>
+          <h2 class="text-xl font-normal font-serif-title text-white">TTM Squeeze Screener</h2>
+          <p class="text-xs text-slate-500">Bollinger inside Keltner compression. Firing = squeeze-off + momentum expansion.</p>
+        </div>
+        <span class="text-[11px] font-mono-data text-slate-500">UNIVERSE · US MEGA / GROWTH</span>
+      </div>
+      <div class="overflow-x-auto rounded-xl inner-box-bg">
+        <table class="data-table font-mono-data">
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>TF</th>
+              <th>State</th>
+              <th>BB Width</th>
+              <th>Mom</th>
+              <th>Last</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-200">
+            <tr>
+              <td class="text-cyan-300 font-semibold">NVDA</td>
+              <td class="text-slate-400">15m</td>
+              <td><span class="status-fire text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">Squeeze Firing</span></td>
+              <td class="text-slate-300">0.84 → 1.31</td>
+              <td class="text-emerald-400">+2.4σ</td>
+              <td class="text-slate-500">15:38:11</td>
+            </tr>
+            <tr>
+              <td class="text-cyan-300 font-semibold">TSLA</td>
+              <td class="text-slate-400">15m</td>
+              <td><span class="status-build text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">Building</span></td>
+              <td class="text-slate-300">0.41 → 0.38</td>
+              <td class="text-slate-400">+0.3σ</td>
+              <td class="text-slate-500">15:36:44</td>
+            </tr>
+            <tr>
+              <td class="text-cyan-300 font-semibold">AMD</td>
+              <td class="text-slate-400">5m</td>
+              <td><span class="status-fire text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">Squeeze Firing</span></td>
+              <td class="text-slate-300">0.62 → 0.97</td>
+              <td class="text-emerald-400">+1.8σ</td>
+              <td class="text-slate-500">15:41:02</td>
+            </tr>
+            <tr>
+              <td class="text-cyan-300 font-semibold">META</td>
+              <td class="text-slate-400">30m</td>
+              <td><span class="status-build text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">Building</span></td>
+              <td class="text-slate-300">0.55 → 0.49</td>
+              <td class="text-rose-400">−0.6σ</td>
+              <td class="text-slate-500">15:29:18</td>
+            </tr>
+            <tr>
+              <td class="text-cyan-300 font-semibold">SMCI</td>
+              <td class="text-slate-400">15m</td>
+              <td><span class="status-fire text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">Squeeze Firing</span></td>
+              <td class="text-slate-300">1.02 → 1.74</td>
+              <td class="text-emerald-400">+3.1σ</td>
+              <td class="text-slate-500">15:40:27</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="neon-panel rounded-2xl p-6 space-y-5">
+      <div class="space-y-1">
+        <span class="text-[10px] font-semibold uppercase tracking-wider text-cyan-400 font-mono-data">Section 02</span>
+        <h2 class="text-xl font-normal font-serif-title text-white">CVD (Cumulative Volume Delta) Divergence</h2>
+        <p class="text-xs text-slate-500">Price vs aggressive buy/sell imbalance. Exhaustion prints when the tape and the print disagree.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <article class="inner-box-bg rounded-xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-mono-data text-cyan-300 font-semibold">NVDA</span>
+            <span class="status-exhaust text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">Sell Exhaustion</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">Price made a lower low into VWAP − 0.4 ATR while CVD printed a higher low. Aggressive sellers are being absorbed.</p>
+          <div class="grid grid-cols-3 gap-2 font-mono-data text-[11px]">
+            <div class="bg-[#070b12] border border-cyan-900/50 rounded-lg p-2">
+              <p class="text-slate-500 uppercase tracking-wider text-[9px]">Price Δ</p>
+              <p class="text-rose-400">−1.12%</p>
+            </div>
+            <div class="bg-[#070b12] border border-cyan-900/50 rounded-lg p-2">
+              <p class="text-slate-500 uppercase tracking-wider text-[9px]">CVD Δ</p>
+              <p class="text-emerald-400">+18.4k</p>
+            </div>
+            <div class="bg-[#070b12] border border-cyan-900/50 rounded-lg p-2">
+              <p class="text-slate-500 uppercase tracking-wider text-[9px]">Div</p>
+              <p class="text-cyan-300">BULL</p>
+            </div>
+          </div>
+        </article>
+        <article class="inner-box-bg rounded-xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-mono-data text-cyan-300 font-semibold">TSLA</span>
+            <span class="status-exhaust text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">Buy Exhaustion</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">New session high on thinning lift. CVD rolled over −22k while price pushed +0.8%. Buying pressure is fading into the offer.</p>
+          <div class="grid grid-cols-3 gap-2 font-mono-data text-[11px]">
+            <div class="bg-[#070b12] border border-cyan-900/50 rounded-lg p-2">
+              <p class="text-slate-500 uppercase tracking-wider text-[9px]">Price Δ</p>
+              <p class="text-emerald-400">+0.81%</p>
+            </div>
+            <div class="bg-[#070b12] border border-cyan-900/50 rounded-lg p-2">
+              <p class="text-slate-500 uppercase tracking-wider text-[9px]">CVD Δ</p>
+              <p class="text-rose-400">−22.1k</p>
+            </div>
+            <div class="bg-[#070b12] border border-cyan-900/50 rounded-lg p-2">
+              <p class="text-slate-500 uppercase tracking-wider text-[9px]">Div</p>
+              <p class="text-rose-300">BEAR</p>
+            </div>
+          </div>
+        </article>
+        <article class="inner-box-bg rounded-xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-mono-data text-cyan-300 font-semibold">AMD</span>
+            <span class="status-absorb text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">Absorption</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">Large sell prints at $164.20 were lifted within two bars. CVD recovered after a −9k flush; inventory is being taken, not dumped.</p>
+          <div class="grid grid-cols-3 gap-2 font-mono-data text-[11px]">
+            <div class="bg-[#070b12] border border-cyan-900/50 rounded-lg p-2">
+              <p class="text-slate-500 uppercase tracking-wider text-[9px]">Flush</p>
+              <p class="text-rose-400">−9.0k</p>
+            </div>
+            <div class="bg-[#070b12] border border-cyan-900/50 rounded-lg p-2">
+              <p class="text-slate-500 uppercase tracking-wider text-[9px]">Recover</p>
+              <p class="text-emerald-400">+11.6k</p>
+            </div>
+            <div class="bg-[#070b12] border border-cyan-900/50 rounded-lg p-2">
+              <p class="text-slate-500 uppercase tracking-wider text-[9px]">Net</p>
+              <p class="text-cyan-300">+2.6k</p>
+            </div>
+          </div>
+        </article>
+        <article class="inner-box-bg rounded-xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-mono-data text-cyan-300 font-semibold">QQQ</span>
+            <span class="status-build text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">No Divergence</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">Index tape is aligned: price and CVD both grind higher off the cash open. No exhaustion flag — trend confirmation only.</p>
+          <div class="grid grid-cols-3 gap-2 font-mono-data text-[11px]">
+            <div class="bg-[#070b12] border border-cyan-900/50 rounded-lg p-2">
+              <p class="text-slate-500 uppercase tracking-wider text-[9px]">Price Δ</p>
+              <p class="text-emerald-400">+0.36%</p>
+            </div>
+            <div class="bg-[#070b12] border border-cyan-900/50 rounded-lg p-2">
+              <p class="text-slate-500 uppercase tracking-wider text-[9px]">CVD Δ</p>
+              <p class="text-emerald-400">+41.2k</p>
+            </div>
+            <div class="bg-[#070b12] border border-cyan-900/50 rounded-lg p-2">
+              <p class="text-slate-500 uppercase tracking-wider text-[9px]">Div</p>
+              <p class="text-slate-400">NONE</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="neon-panel rounded-2xl p-6 space-y-5">
+      <div class="space-y-1">
+        <span class="text-[10px] font-semibold uppercase tracking-wider text-cyan-400 font-mono-data">Section 03</span>
+        <h2 class="text-xl font-normal font-serif-title text-white">Options Flow &amp; Volatility Surge</h2>
+        <p class="text-xs text-slate-500">Key anomalous options activities: unusual premium, IV spikes, and strike clustering vs 20-day baseline.</p>
+      </div>
+      <div class="overflow-x-auto rounded-xl inner-box-bg">
+        <table class="data-table font-mono-data">
+          <thead>
+            <tr>
+              <th>Underlying</th>
+              <th>Contract</th>
+              <th>Side</th>
+              <th>Premium</th>
+              <th>IV Δ</th>
+              <th>Flag</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-200">
+            <tr>
+              <td class="text-cyan-300 font-semibold">NVDA</td>
+              <td class="text-slate-300">Sep 20 140 C</td>
+              <td class="text-emerald-400">SWEEP BUY</td>
+              <td>$4.8M</td>
+              <td class="text-amber-300">+18.2%</td>
+              <td class="text-cyan-300">Vol Surge</td>
+            </tr>
+            <tr>
+              <td class="text-cyan-300 font-semibold">TSLA</td>
+              <td class="text-slate-300">Aug 22 230 P</td>
+              <td class="text-rose-400">SWEEP BUY</td>
+              <td>$2.1M</td>
+              <td class="text-amber-300">+24.6%</td>
+              <td class="text-rose-300">Put Wall</td>
+            </tr>
+            <tr>
+              <td class="text-cyan-300 font-semibold">SMCI</td>
+              <td class="text-slate-300">Sep 06 55 C</td>
+              <td class="text-emerald-400">BLOCK BUY</td>
+              <td>$1.4M</td>
+              <td class="text-amber-300">+31.0%</td>
+              <td class="text-cyan-300">IV Crush Fade</td>
+            </tr>
+            <tr>
+              <td class="text-cyan-300 font-semibold">SPX</td>
+              <td class="text-slate-300">0DTE 5650 C</td>
+              <td class="text-emerald-400">SWEEP BUY</td>
+              <td>$9.6M</td>
+              <td class="text-amber-300">+12.4%</td>
+              <td class="text-cyan-300">Gamma Chase</td>
+            </tr>
+            <tr>
+              <td class="text-cyan-300 font-semibold">AMD</td>
+              <td class="text-slate-300">Sep 13 170 C</td>
+              <td class="text-emerald-400">SPLIT BUY</td>
+              <td>$0.9M</td>
+              <td class="text-amber-300">+15.7%</td>
+              <td class="text-slate-300">Unusual OI</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[11px] text-slate-600 font-mono-data">DISCLAIMER · Mock tape for research UI. Not a live feed. Not investment advice.</p>
+    </section>
+  </main>
+
+  <footer class="border-t border-cyan-900/40 py-8 mt-12 bg-[#070b12]">
+    <div class="max-w-7xl mx-auto px-6 text-center text-xs text-slate-500 space-y-4">
+      <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2" aria-label="Legal">
+        <a href="about.html" class="hover:text-sky-400 transition">About</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="contact.html" class="hover:text-sky-400 transition">Contact</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="privacy.html" class="hover:text-sky-400 transition">Privacy Policy</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="terms.html" class="hover:text-sky-400 transition">Terms of Use</a>
+      </nav>
+      <p>© 2026 DawnQT Research. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="js/lang-selector.js" defer></script>
+  <script src="js/membership.js" defer></script>
+  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+</body>
+</html>
