@@ -1,0 +1,45 @@
+/* Beehiiv subscribe embed — blend with DawnQT dark theme (#0b0f17) */
+.beehiiv-embed-wrap {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+#subscribe {
+  scroll-margin-top: 5.5rem;
+}
+
+.beehiiv-embed-wrap iframe,
+iframe.beehiiv-embed,
+iframe[src*="subscribe-forms.beehiiv.com"],
+.beehiiv-embed-wrap [data-test-id="beehiiv-embed"] {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background-color: transparent !important;
+  border-radius: 0.75rem;
+}
+
+.beehiiv-embed-wrap--modal {
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 767px) {
+  .beehiiv-embed-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .beehiiv-embed-wrap iframe,
+  iframe.beehiiv-embed,
+  iframe[src*="subscribe-forms.beehiiv.com"] {
+    min-height: 240px;
+  }
+}

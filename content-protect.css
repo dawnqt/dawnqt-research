@@ -1,0 +1,52 @@
+/* DawnQT Intelligence Hub — content copy deterrent */
+html,
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea,
+select,
+[contenteditable="true"],
+[contenteditable="plaintext-only"],
+[contenteditable=""],
+pre,
+code,
+kbd,
+samp {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.dq-protect-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  z-index: 2147483646;
+  max-width: min(36rem, calc(100vw - 2rem));
+  padding: 0.85rem 1.2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #334155;
+  background: #161e2e;
+  color: #e2e8f0;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dq-protect-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
