@@ -1,3 +1,4 @@
+ 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -59,7 +60,6 @@
   </style>
   <link rel="stylesheet" href="css/content-protect.css">
   <link rel="stylesheet" href="css/membership.css">
-  <link rel="stylesheet" href="css/beehiiv.css">
   <script src="js/content-protect.js"></script>
 </head>
 <body class="antialiased min-h-screen flex flex-col justify-between">
@@ -88,9 +88,9 @@
             <option value="pt">Português (Brasil)</option>
           </select>
         </div>
-        <a href="#subscribe" class="subscribe-btn bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold px-4 py-2 rounded-lg transition">
+        <button type="button" class="js-subscribe subscribe-btn bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold px-4 py-2 rounded-lg transition" data-member-open>
           Subscribe
-        </a>
+        </button>
       </div>
     </div>
   </header>
@@ -104,63 +104,30 @@
         </div>
         <div id="hero-points" class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-5 mt-5 border-t border-slate-800/80 text-xs text-slate-300"></div>
       </section>
-      <aside class="space-y-6 min-w-0">
-       <div class="card-bg rounded-2xl p-4 space-y-2">
-        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Live Market Snapshot</h3>
-        <div class="tradingview-widget-container" style="width: 100%; height: 380px;">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-          {
-            "colorTheme": "dark",
-            "dateRange": "1D",
-            "showChart": false,
-            "locale": "en",
-            "largeChartUrl": "",
-            "isTransparent": true,
-            "showSymbolLogo": true,
-            "showFloatingTooltip": false,
-            "width": "100%",
-            "height": "380",
-            "tabs": [
-              {
-                "title": "Markets",
-                "symbols": [
-                  { "s": "FOREXCOM:SPXUSD", "d": "S&P 500" },
-                  { "s": "FOREXCOM:NSXUSD", "d": "Nasdaq 100" },
-                  { "s": "FOREXCOM:US2000", "d": "Russell 2000" },
-                  { "s": "TVC:US10Y", "d": "US 10Y Yield" },
-                  { "s": "TVC:DXY", "d": "US Dollar Index" },
-                  { "s": "CBOE:VIX", "d": "VIX (Volatility)" },
-                  { "s": "OANDA:XAUUSD", "d": "Gold" },
-                  { "s": "TVC:USOIL", "d": "Crude Oil" },
-                  { "s": "BITSTAMP:BTCUSD", "d": "Bitcoin" },
-                  { "s": "AMEX:HYG", "d": "HYG (High Yield)" }
-                ]
-              }
-            ]
-          }
-          </script>
+      <aside class="space-y-6">
+        <div class="card-bg rounded-2xl p-5 space-y-3">
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Live Market Snapshot</h3>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between items-center py-1.5 border-b border-slate-800">
+              <span class="text-slate-300">S&P 500 Index</span>
+              <span id="sp500-val" class="text-emerald-400 font-mono font-semibold">+0.00%</span>
+            </div>
+            <div class="flex justify-between items-center py-1.5 border-b border-slate-800">
+              <span class="text-slate-300">Nasdaq Composite</span>
+              <span id="nasdaq-val" class="text-emerald-400 font-mono font-semibold">+0.00%</span>
+            </div>
+            <div class="flex justify-between items-center py-1.5">
+              <span class="text-slate-300">US 10Y Yield</span>
+              <span id="yield-val" class="text-slate-400 font-mono">0.00%</span>
+            </div>
+          </div>
         </div>
-      </div>
-              {
-                "title": "Markets",
-                "symbols": [
-                  { "s": "FOREXCOM:SPXUSD", "d": "S&P 500" },
-                  { "s": "FOREXCOM:NSXUSD", "d": "Nasdaq 100" },
-                  { "s": "TVC:US10Y", "d": "US 10Y Yield" },
-                  { "s": "TVC:DXY", "d": "US Dollar Index" }
-                ]
-              }
-            ]
-          }
-          </script>
-        </div>
-      </div>
-        <div class="card-bg rounded-2xl p-5 space-y-3 min-w-0 overflow-hidden">
+        <div class="card-bg rounded-2xl p-5 space-y-3">
           <h3 class="text-sm font-bold text-white">Daily Briefing</h3>
           <p class="text-xs text-slate-400">One concise email each morning. No spam.</p>
-          <div id="subscribe" class="beehiiv-embed-wrap">
-            <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="15d4100b-6bf4-472b-8f5c-3fd88042d863"></script>
+          <div class="space-y-2">
+            <input type="email" placeholder="you@company.com" autocomplete="email" class="w-full bg-[#0b0f17] border border-slate-700 text-xs text-white rounded-lg px-3 py-2.5 focus:outline-none focus:border-sky-500">
+            <button type="button" class="w-full bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold py-2.5 rounded-lg transition" data-member-open>Subscribe</button>
           </div>
         </div>
       </aside>
@@ -306,316 +273,5 @@
   </script>
   <script src="js/lang-selector.js" defer></script>
   <script src="js/membership.js" defer></script>
-  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DawnQT Intelligence Hub | Global Market Intelligence &amp; Trading Academy</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
-  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
-  <meta name="theme-color" content="#0f172a">
-  <meta name="description" content="Independent intelligence hub for data-driven global market analysis and rule-based trading education. Not a broker. Not investment advice.">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="DawnQT Intelligence Hub">
-  <meta property="og:title" content="DawnQT Intelligence Hub | Global Market Intelligence &amp; Trading Academy">
-  <meta property="og:description" content="Independent intelligence hub for data-driven global market analysis and rule-based trading education. Not a broker. Not investment advice.">
-  <meta property="og:url" content="https://dawnqt-research.vercel.app/">
-  <meta property="og:image" content="https://dawnqt-research.vercel.app/og-image.svg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DawnQT Intelligence Hub | Global Market Intelligence &amp; Trading Academy">
-  <meta name="twitter:description" content="Independent intelligence hub for data-driven global market analysis and rule-based trading education. Not a broker. Not investment advice.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    html { scroll-behavior: smooth; }
-    body { background-color: #0b0f17; color: #f1f5f9; font-family: 'Inter', sans-serif; }
-    .font-serif-title { font-family: 'Instrument Serif', serif; }
-    .card-bg { background-color: #161e2e; border: 1px solid #222d3d; }
-    .card-bg:hover { border-color: #334155; transition: all 0.2s ease-in-out; }
-    .inner-box-bg { background-color: #111827; border: 1px solid #1f2937; }
-    #daily, #academy-section, #data-arc { scroll-margin-top: 5rem; }
-    header { overflow: visible; z-index: 9999; }
-    .lang-switcher-cluster { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; position: relative; z-index: 9999; }
-    .lang-switcher { position: relative; z-index: 9999; flex-shrink: 0; }
-    .lang-switcher-select {
-      display: block; appearance: none; -webkit-appearance: none; height: 2.25rem; min-width: 10rem;
-      padding: 0 2rem 0 0.75rem; border: 1px solid #38bdf8; border-radius: 0.5rem;
-      background-color: #1e293b; color: #ffffff; font-size: 12px; font-weight: 600;
-      font-family: Inter, system-ui, sans-serif; cursor: pointer; z-index: 9999; position: relative; color-scheme: dark;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 4.5L6 8l3.5-3.5' fill='none' stroke='%2338bdf8' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 0.6rem center; background-size: 12px;
-    }
-    .lang-switcher-select option { background: #1e293b; color: #ffffff; }
-    .stage-head {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.35rem 0.5rem;
-      min-width: 0;
-    }
-    .stage-head .stage-badge { flex: 0 0 auto; }
-    .stage-head .stage-tag {
-      flex: 1 1 auto;
-      min-width: 0;
-      text-align: right;
-      line-height: 1.3;
-    }
-  </style>
-  <link rel="stylesheet" href="css/content-protect.css">
-  <link rel="stylesheet" href="css/membership.css">
-  <link rel="stylesheet" href="css/beehiiv.css">
-  <script src="js/content-protect.js"></script>
-</head>
-<body class="antialiased min-h-screen flex flex-col justify-between">
-  <header class="border-b border-slate-800 bg-[#0b0f17]/95 sticky top-0 z-[9999] backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <a href="index.html" class="text-2xl font-bold tracking-tight font-serif-title text-white">Dawn<span class="text-sky-400">QT</span> Research</a>
-      </div>
-      <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-        <a href="#daily" class="hover:text-sky-400 transition">Daily Brew</a>
-        <a href="academy.html" class="hover:text-sky-400 transition flex items-center space-x-1">
-          <span class="text-xs text-sky-400">★</span> <span>트레이딩 교실</span>
-        </a>
-        <a href="themes.html" class="hover:text-sky-400 transition">Themes & Alpha</a>
-        <a href="data-arc.html" class="hover:text-sky-400 transition">Data Arc</a>
-        <a href="trader-note.html" class="hover:text-sky-400 transition">Trader's Note</a>
-      </nav>
-      <div class="lang-switcher-cluster">
-        <div class="lang-switcher notranslate" id="lang-switcher" translate="no">
-          <select class="lang-switcher-select notranslate" aria-label="Language" translate="no">
-            <option value="en">English</option>
-            <option value="ko">한국어</option>
-            <option value="zh-CN">简体中文</option>
-            <option value="ja">日本語</option>
-            <option value="hi">हिन्दी</option>
-            <option value="pt">Português (Brasil)</option>
-          </select>
-        </div>
-        <a href="#subscribe" class="subscribe-btn bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold px-4 py-2 rounded-lg transition">
-          Subscribe
-        </a>
-      </div>
-    </div>
-  </header>
-  <main class="max-w-7xl mx-auto px-6 py-8 space-y-10">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <section id="daily" class="lg:col-span-2 card-bg rounded-2xl p-6 md:p-8 flex flex-col justify-between">
-        <div class="space-y-3">
-          <span id="hero-category" class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Daily Focus</span>
-          <h1 id="hero-title" class="text-xl md:text-2xl font-normal font-serif-title text-white leading-snug">로딩 중...</h1>
-          <p id="hero-meta" class="text-slate-400 text-xs md:text-sm leading-relaxed"></p>
-        </div>
-        <div id="hero-points" class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-5 mt-5 border-t border-slate-800/80 text-xs text-slate-300"></div>
-      </section>
-      <aside class="space-y-6 min-w-0">
-       <div class="card-bg rounded-2xl p-4 space-y-2">
-        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Live Market Snapshot</h3>
-        <div class="tradingview-widget-container" style="width: 100%; height: 380px;">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-          {
-            "colorTheme": "dark",
-            "dateRange": "1D",
-            "showChart": false,
-            "locale": "en",
-            "largeChartUrl": "",
-            "isTransparent": true,
-            "showSymbolLogo": true,
-            "showFloatingTooltip": false,
-            "width": "100%",
-            "height": "380",
-            "tabs": [
-              {
-                "title": "Markets",
-                "symbols": [
-                  { "s": "FOREXCOM:SPXUSD", "d": "S&P 500" },
-                  { "s": "FOREXCOM:NSXUSD", "d": "Nasdaq 100" },
-                  { "s": "FOREXCOM:US2000", "d": "Russell 2000" },
-                  { "s": "TVC:US10Y", "d": "US 10Y Yield" },
-                  { "s": "TVC:DXY", "d": "US Dollar Index" },
-                  { "s": "CBOE:VIX", "d": "VIX (Volatility)" },
-                  { "s": "OANDA:XAUUSD", "d": "Gold" },
-                  { "s": "TVC:USOIL", "d": "Crude Oil" },
-                  { "s": "BITSTAMP:BTCUSD", "d": "Bitcoin" },
-                  { "s": "AMEX:HYG", "d": "HYG (High Yield)" }
-                ]
-              }
-            ]
-          }
-          </script>
-        </div>
-      </div>
-              {
-                "title": "Markets",
-                "symbols": [
-                  { "s": "FOREXCOM:SPXUSD", "d": "S&P 500" },
-                  { "s": "FOREXCOM:NSXUSD", "d": "Nasdaq 100" },
-                  { "s": "TVC:US10Y", "d": "US 10Y Yield" },
-                  { "s": "TVC:DXY", "d": "US Dollar Index" }
-                ]
-              }
-            ]
-          }
-          </script>
-        </div>
-      </div>
-        <div class="card-bg rounded-2xl p-5 space-y-3 min-w-0 overflow-hidden">
-          <h3 class="text-sm font-bold text-white">Daily Briefing</h3>
-          <p class="text-xs text-slate-400">One concise email each morning. No spam.</p>
-          <div id="subscribe" class="beehiiv-embed-wrap">
-            <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="15d4100b-6bf4-472b-8f5c-3fd88042d863"></script>
-          </div>
-        </div>
-      </aside>
-    </div>
-    <section id="academy-section" class="card-bg rounded-2xl p-6 space-y-4">
-      <div class="space-y-2">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Academy Framework</span>
-          <a href="academy.html" class="text-xs text-slate-300 hover:text-sky-400 font-medium">전체 목차 보기 &rarr;</a>
-        </div>
-        <p id="academy-catchphrase" class="notranslate text-sm md:text-base font-normal leading-relaxed max-w-3xl" style="color:#94a3b8" data-i18n="academy.catchphrase" translate="no">Simply reading and listening to this course builds disciplined trading habits and clear standards.</p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-        <div class="inner-box-bg p-5 rounded-xl space-y-2 min-w-0">
-          <div class="stage-head">
-            <span class="stage-badge text-[11px] font-semibold text-sky-400 bg-sky-950/80 border border-sky-800/80 px-2 py-0.5 rounded">Stage 1</span>
-            <span id="stage1-tag" class="stage-tag text-xs text-slate-500">20강</span>
-          </div>
-          <h3 id="stage1-title" class="text-sm font-bold text-white leading-snug">왕초보 실전 교실</h3>
-          <p id="stage1-desc" class="text-xs text-slate-400 leading-relaxed">시장의 언어부터 재무제표, 차트, 리스크 관리까지. 실전 전에 고정해야 할 기준.</p>
-          <div class="pt-1">
-            <a id="stage1-link" href="beginner.html" class="text-xs text-slate-300 hover:text-sky-400 font-medium">커리큘럼 열람하기 &rarr;</a>
-          </div>
-        </div>
-        <div class="inner-box-bg p-5 rounded-xl space-y-2 min-w-0">
-          <div class="stage-head">
-            <span class="stage-badge text-[11px] font-semibold text-slate-300 bg-slate-800 px-2 py-0.5 rounded">Stage 2</span>
-            <span id="stage2-tag" class="stage-tag text-xs text-slate-500">40강</span>
-          </div>
-          <h3 id="stage2-title" class="text-sm font-bold text-white leading-snug">중급자 시스템 원칙 과정</h3>
-          <p id="stage2-desc" class="text-xs text-slate-400 leading-relaxed">차트 심화, 시장 구조, 전략 스위칭. If-Then 규칙으로 매매 기준을 고정합니다.</p>
-          <div class="pt-1">
-            <a id="stage2-link" href="intermediate.html" class="text-xs text-slate-300 hover:text-sky-400 font-medium">목차 보기 &rarr;</a>
-          </div>
-        </div>
-        <div class="inner-box-bg p-5 rounded-xl space-y-2 min-w-0">
-          <div class="stage-head">
-            <span class="stage-badge text-[11px] font-semibold text-violet-400 bg-violet-950/80 border border-violet-800/80 px-2 py-0.5 rounded">Stage 3</span>
-            <span id="stage3-tag" class="stage-tag text-xs text-slate-500">35강</span>
-          </div>
-          <h3 id="stage3-title" class="text-sm font-bold text-white leading-snug">고급 실전 마스터 과정</h3>
-          <p id="stage3-desc" class="text-xs text-slate-400 leading-relaxed">미시구조, 옵션 흐름, 전략 엔진. 수급 위에서 룰 기반 시스템을 운영합니다.</p>
-          <div class="pt-1">
-            <a id="stage3-link" href="advanced.html" class="text-xs text-slate-300 hover:text-violet-400 font-medium">마스터 과정 입장하기 &rarr;</a>
-          </div>
-        </div>
-        <div class="inner-box-bg p-5 rounded-xl space-y-2 min-w-0">
-          <div class="flex items-center justify-between mb-3 min-w-0 gap-2">
-            <span class="shrink-0 text-[11px] font-semibold px-2 py-0.5 rounded" style="background-color: rgba(239, 68, 68, 0.15); color: #f87171;">Stage 4</span>
-            <span id="stage4-tag" class="text-xs text-right min-w-0 leading-tight" style="color: #94a3b8;">20-Lecture Wisdom Course</span>
-          </div>
-          <h3 id="stage4-title" class="text-sm font-bold text-white leading-snug">심리지혜 교재</h3>
-          <p id="stage4-desc" class="text-xs text-slate-400 leading-relaxed">승자의 착각부터 손절 회피, FOMO, 규율까지. 마음이 계좌를 무너뜨리는 장면.</p>
-          <div class="pt-1">
-            <a id="stage4-link" href="psychology.html" class="text-xs text-slate-300 hover:text-amber-400 font-medium">심리 교재 읽기 &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <a href="themes.html" id="themes" class="card-bg p-6 rounded-2xl space-y-3 flex flex-col justify-between group">
-        <div class="space-y-2">
-          <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Deep Research</span>
-          <h2 class="text-lg font-normal font-serif-title text-white">Themes & Alpha</h2>
-          <p class="text-xs text-slate-400 leading-relaxed">뉴스 ➔ 테마 ➔ 수혜 섹터 ➔ 트레이딩 관점.<br>산업 메가 트렌드를 체계적으로 분석.</p>
-        </div>
-        <div class="pt-3 border-t border-slate-800/80">
-          <span class="text-xs text-slate-300 group-hover:text-sky-400 font-medium">최신 분석 읽기 &rarr;</span>
-        </div>
-      </a>
-      <a href="data-arc.html" id="data-arc" class="card-bg p-6 rounded-2xl space-y-3 flex flex-col justify-between group">
-        <div class="space-y-2">
-          <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">AI Signal</span>
-          <h2 class="text-lg font-normal font-serif-title text-white">Data Arc</h2>
-          <p class="text-xs text-slate-400 leading-relaxed">TTM Squeeze, 거래량 급증, Divergence.<br>AI 에이전트가 정리하는 실시간 수급 이상 징후.</p>
-        </div>
-        <div id="signal-container" class="inner-box-bg p-2.5 rounded-lg text-[11px] font-mono text-emerald-400 space-y-1"></div>
-        <div class="pt-3 border-t border-slate-800/80">
-          <span class="text-xs text-slate-300 group-hover:text-sky-400 font-medium">시그널 대시보드 열기 &rarr;</span>
-        </div>
-      </a>
-      <a href="trader-note.html" id="trader" class="card-bg p-6 rounded-2xl space-y-3 flex flex-col justify-between group">
-        <div class="space-y-2">
-          <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Human Verification</span>
-          <h2 class="text-lg font-normal font-serif-title text-white">Trader's Note</h2>
-          <p class="text-xs text-slate-400 leading-relaxed">30초 음성 메모 기반 매매 일지.<br>15년 차 트레이더의 진입 타점과 복기 기록.</p>
-        </div>
-        <div class="pt-3 border-t border-slate-800/80">
-          <span class="text-xs text-slate-300 group-hover:text-sky-400 font-medium">매매 복기 보기 &rarr;</span>
-        </div>
-      </a>
-    </div>
-  </main>
-  <footer class="border-t border-slate-800 py-8 mt-12 bg-[#0b0f17]">
-    <div class="max-w-7xl mx-auto px-6 text-center text-xs text-slate-500 space-y-4">
-      <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2" aria-label="Legal">
-        <a href="about.html" class="hover:text-sky-400 transition">About</a>
-        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
-        <a href="contact.html" class="hover:text-sky-400 transition">Contact</a>
-        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
-        <a href="privacy.html" class="hover:text-sky-400 transition">Privacy Policy</a>
-        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
-        <a href="terms.html" class="hover:text-sky-400 transition">Terms of Use</a>
-      </nav>
-      <p>© 2026 DawnQT Research. All rights reserved.</p>
-    </div>
-  </footer>
-  <script>
-    fetch('data.json')
-      .then(res => res.json())
-      .then(d => {
-        document.getElementById('hero-category').textContent = d.hero.category;
-        document.getElementById('hero-title').textContent = d.hero.title;
-        document.getElementById('hero-meta').textContent = d.hero.meta;
-        document.getElementById('hero-points').innerHTML = d.hero.points.map(p => 
-          `<div class="inner-box-bg p-3 rounded-lg"><strong class="text-slate-200">${p.title}:</strong> ${p.desc}</div>`
-        ).join('');
-        document.getElementById('sp500-val').textContent = d.market.sp500;
-        document.getElementById('nasdaq-val').textContent = d.market.nasdaq;
-        document.getElementById('yield-val').textContent = d.market.yield10y;
-        document.getElementById('stage1-tag').textContent = d.academy.stage1.tag;
-        document.getElementById('stage1-title').textContent = d.academy.stage1.title;
-        document.getElementById('stage1-desc').textContent = d.academy.stage1.desc;
-        document.getElementById('stage1-link').setAttribute('href', d.academy.stage1.link);
-        document.getElementById('stage2-tag').textContent = d.academy.stage2.tag;
-        document.getElementById('stage2-title').textContent = d.academy.stage2.title;
-        document.getElementById('stage2-desc').textContent = d.academy.stage2.desc;
-        document.getElementById('stage2-link').setAttribute('href', d.academy.stage2.link);
-        document.getElementById('stage3-tag').textContent = d.academy.stage3.tag;
-        document.getElementById('stage3-title').textContent = d.academy.stage3.title;
-        document.getElementById('stage3-desc').textContent = d.academy.stage3.desc;
-        document.getElementById('stage3-link').setAttribute('href', d.academy.stage3.link);
-        if (d.academy.stage4) {
-          document.getElementById('stage4-tag').textContent = d.academy.stage4.tag;
-          document.getElementById('stage4-title').textContent = d.academy.stage4.title;
-          document.getElementById('stage4-desc').textContent = d.academy.stage4.desc;
-          document.getElementById('stage4-link').setAttribute('href', d.academy.stage4.link);
-        }
-        document.getElementById('signal-container').innerHTML = d.signals.map(s => `<div>${s}</div>`).join('');
-      })
-      .catch(err => console.error("Data load error:", err));
-  </script>
-  <script src="js/lang-selector.js" defer></script>
-  <script src="js/membership.js" defer></script>
-  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
 </body>
 </html>
