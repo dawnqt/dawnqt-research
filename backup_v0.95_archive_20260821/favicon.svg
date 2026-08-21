@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="DawnQT">
+  <rect width="32" height="32" rx="8" fill="#0f172a"/>
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="7.25" fill="none" stroke="#164e63" stroke-width="1.5"/>
+  <path fill="#38bdf8" fill-rule="evenodd" d="M8.6 6.8h8.55c5.05 0 8.65 3.45 8.65 9.2s-3.6 9.2-8.65 9.2H8.6V6.8zm3.2 3.15v12.1h5.35c3.2 0 5.25-2.2 5.25-6.05s-2.05-6.05-5.25-6.05H11.8z"/>
+  <polyline fill="none" stroke="#7dd3fc" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" points="12.2 21.2 15.4 17.15 17.55 18.55 22.35 12.35"/>
+  <circle cx="22.35" cy="12.35" r="1.45" fill="#22d3ee"/>
+</svg>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>중급 1-2. 다중 타임프레임(MTF) 분석 — 일봉·4시간봉·1시간봉·15분봉 연계 전략 | DawnQT Intelligence Hub</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="중급 1-2. 다중 타임프레임(MTF) 분석 — 일봉·4시간봉·1시간봉·15분봉 연계 전략 — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DawnQT Intelligence Hub">
+  <meta property="og:title" content="중급 1-2. 다중 타임프레임(MTF) 분석 — 일봉·4시간봉·1시간봉·15분봉 연계 전략 | DawnQT Intelligence Hub">
+  <meta property="og:description" content="중급 1-2. 다중 타임프레임(MTF) 분석 — 일봉·4시간봉·1시간봉·15분봉 연계 전략 — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <meta property="og:url" content="https://dawnqt-research.vercel.app/academy/intermediate/1-2.html">
+  <meta property="og:image" content="https://dawnqt-research.vercel.app/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="중급 1-2. 다중 타임프레임(MTF) 분석 — 일봉·4시간봉·1시간봉·15분봉 연계 전략 | DawnQT Intelligence Hub">
+  <meta name="twitter:description" content="중급 1-2. 다중 타임프레임(MTF) 분석 — 일봉·4시간봉·1시간봉·15분봉 연계 전략 — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/academy.css">
+  <link rel="stylesheet" href="../../css/content-protect.css">
+  <link rel="stylesheet" href="../../css/membership.css">
+  <link rel="stylesheet" href="../../css/beehiiv.css">
+  <script src="../../js/content-protect.js"></script>
+  
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+  
+  <header class="border-b border-slate-800 bg-[#0b0f17]/95 sticky top-0 z-[9999] backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="../../index.html" class="text-2xl font-bold tracking-tight font-serif-title text-white">Dawn<span class="text-sky-400">QT</span> Academy</a>
+      
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+        <a href="../../index.html#daily" class="hover:text-sky-400 transition">Daily Brew</a>
+        <a href="../../academy.html" class="hover:text-sky-400 transition flex items-center space-x-1">
+          <span class="text-xs text-sky-400">★</span> <span>트레이딩 교실</span>
+        </a>
+        <a href="../../themes.html" class="hover:text-sky-400 transition">Themes & Alpha</a>
+        <a href="../../data-arc.html" class="hover:text-sky-400 transition">Data Arc</a>
+        <a href="../../trader-note.html" class="hover:text-sky-400 transition">Trader's Note</a>
+      </nav>
+      <div class="lang-switcher-cluster">
+        <div class="lang-switcher notranslate" id="lang-switcher" translate="no">
+          <select class="lang-switcher-select notranslate" aria-label="Language" translate="no">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="zh-CN">简体中文</option>
+            <option value="ja">日本語</option>
+            <option value="hi">हिन्दी</option>
+            <option value="pt">Português (Brasil)</option>
+          </select>
+        </div>
+        <button type="button" class="js-subscribe subscribe-btn bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold px-4 py-2 rounded-lg transition" data-member-open>Subscribe</button>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-6 py-10 w-full">
+    <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-8">
+      <article class="space-y-6 min-w-0">
+        <div class="text-xs text-slate-500 space-x-2">
+          <a href="../../academy.html" class="hover:text-sky-400">트레이딩 교실</a>
+          <span>/</span>
+          <a href="../../intermediate.html" class="hover:text-sky-400">중급자 시스템 원칙 과정</a>
+          <span>/</span>
+          <span class="text-slate-400">1-2</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <a href="../../beginner.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">왕초보</a>
+        <a href="../../intermediate.html" class="course-pill is-active bg-slate-200 border-slate-200 text-slate-950 text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">중급자</a>
+        <a href="../../advanced.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">고급</a>
+        <a href="../../psychology.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">심리지혜</a>
+        </div>
+        <section class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] font-semibold text-slate-300 bg-slate-800 border border-slate-700 px-2 py-0.5 rounded">Stage 2</span>
+            <span class="text-xs text-slate-500">2 / 40</span>
+          </div>
+          <h1 class="text-2xl md:text-3xl font-normal font-serif-title text-white leading-snug">중급 1-2. 다중 타임프레임(MTF) 분석 — 일봉·4시간봉·1시간봉·15분봉 연계 전략</h1>
+        </section>
+        <div class="inner-box-bg rounded-xl p-5 border-l-2 border-slate-500 space-y-2">
+          <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">한눈에 답</p>
+          <p class="text-sm text-slate-300 leading-relaxed">다중 타임프레임(MTF) 분석은 하나의 차트만 보고 매매하는 실수를 막기 위해 상위 타임프레임에서 방향을, 하위 타임프레임에서 정밀한 진입 시점을 찾는 기법입니다. 일봉이 나침반, 4시간봉이 지도, 1시간봉이 GPS, 15분봉이 실제 발걸음 역할을 하며, 하위 타임프레임 신호는 반드시 상위 타임프레임 추세와 같은 방향일 때만 채택합니다.</p>
+        </div>
+        <nav class="toc-mini inner-box-bg rounded-xl p-4 space-y-2">
+          <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">이 강의에서</p>
+          <ol class="space-y-1.5 text-xs">
+            <li><a href="#1-왜-이-개념을-정확히-알아야-하는가">1. 왜 이 개념을 정확히 알아야 하는가</a></li>
+            <li><a href="#2-타임프레임의-역할-분담">2. 타임프레임의 역할 분담</a></li>
+            <li><a href="#3-심리-구조-왜-여러-타임프레임을-겹쳐야-하는가">3. 심리 구조: 왜 여러 타임프레임을 겹쳐야 하는가</a></li>
+            <li><a href="#4-정밀-진입-타점-4단계-확인-절차">4. 정밀 진입 타점 — 4단계 확인 절차</a></li>
+            <li><a href="#5-손절-익절-기준">5. 손절·익절 기준</a></li>
+            <li><a href="#6-가짜-시그널-구분법">6. 가짜 시그널 구분법</a></li>
+            <li><a href="#7-실전-if-then-체크리스트">7. 실전 If-Then 체크리스트</a></li>
+            <li><a href="#8-결론">8. 결론</a></li>
+          </ol>
+        </nav>
+        <div class="lesson-body">
+          <h2 id="1-왜-이-개념을-정확히-알아야-하는가">1. 왜 이 개념을 정확히 알아야 하는가</h2>
+<p>왕초보 과정에서 20MA·50MA·200MA로 단기·중기·장기 추세를 구분하는 법을 배웠습니다. 이는 하나의 타임프레임(대개 일봉) 안에서 속도만 다르게 보는 방식이었습니다. 중급 과정의 MTF 분석은 여기서 더 나아가, 아예 다른 시간 단위의 캔들 여러 개를 동시에 겹쳐서 보는 방법입니다.</p>
+<p>초보자가 자주 저지르는 실수는 15분봉만 보고 매매하는 것입니다. 15분봉에서는 완벽한 상승 신호처럼 보이지만, 일봉으로 확대해보면 사실 강한 하락 추세 안에서의 잠깐의 반등일 뿐인 경우가 많습니다. 이런 매매는 &quot;역추세 매매&quot;가 되어 승률이 급격히 낮아집니다. MTF 분석은 이 문제를 구조적으로 해결합니다.</p>
+<h2 id="2-타임프레임의-역할-분담">2. 타임프레임의 역할 분담</h2>
+<p>미국 시장 트레이더가 흔히 사용하는 4단계 타임프레임 조합은 다음과 같습니다.</p>
+<div class="table-wrap"><table><thead><tr><th>타임프레임</th><th>역할</th><th>확인 내용</th></tr></thead><tbody><tr><td>일봉(Daily)</td><td>큰 방향 결정</td><td>전체 추세(상승·하락·횡보), 주요 지지·저항, 200MA 위치</td></tr><tr><td>4시간봉(4H)</td><td>중기 흐름 확인</td><td>일봉 추세 안에서의 파동 구조, 스윙 진입 후보 구간</td></tr><tr><td>1시간봉(1H)</td><td>진입 구간 좁히기</td><td>지지·저항 접근 여부, 패턴(Engulfing·Pin Bar) 발생 여부</td></tr><tr><td>15분봉(15M)</td><td>정밀 진입 타이밍</td><td>거래량 확인, 최종 진입 트리거 캔들 확정</td></tr></tbody></table></div>
+<p>이 구조는 원칙이 명확합니다. <strong>상위 타임프레임이 방향을 정하고, 하위 타임프레임이 타이밍을 정합니다.</strong> 방향과 타이밍을 반대로 사용하면(예: 15분봉으로 방향을 정하고 일봉으로 타이밍을 잡으면) MTF 분석의 목적 자체가 무너집니다.</p>
+<h2 id="3-심리-구조-왜-여러-타임프레임을-겹쳐야-하는가">3. 심리 구조: 왜 여러 타임프레임을 겹쳐야 하는가</h2>
+<p>한 타임프레임의 캔들은 그 시간 단위 안에서의 심리만 보여줍니다. 15분봉의 강한 초록 캔들은 &quot;그 15분 동안 매수 세력이 이겼다&quot;는 뜻일 뿐, 일봉 전체의 승부와는 무관할 수 있습니다.</p>
+<p>기관 투자자는 대개 일봉·주봉 단위로 방향을 결정하고, 그 방향에 맞춰 하루 종일 분할 매수·매도를 진행합니다. 이 분할 주문이 15분봉·1시간봉에 작은 파동을 만듭니다. 즉, 하위 타임프레임의 파동은 상위 타임프레임 추세를 만드는 기관의 &quot;발걸음 소리&quot;입니다. 발걸음 소리만 듣고 방향을 판단하면 안 되고, 지도(상위 타임프레임)를 먼저 봐야 발걸음이 어디로 향하는지 알 수 있습니다.</p>
+<h2 id="4-정밀-진입-타점-4단계-확인-절차">4. 정밀 진입 타점 — 4단계 확인 절차</h2>
+<h3 id="4-1-1단계-일봉에서-큰-그림-확인">4-1. 1단계: 일봉에서 큰 그림 확인</h3>
+<p>일봉 차트에서 현재 추세(HH·HL 또는 LH·LL)를 확인하고, 200MA 위인지 아래인지 봅니다. 이 단계에서 방향이 불명확하면(횡보 구간) 이후 모든 하위 타임프레임 신호는 신뢰도를 한 단계 낮춰서 봐야 합니다.</p>
+<h3 id="4-2-2단계-4시간봉에서-파동-구조-확인">4-2. 2단계: 4시간봉에서 파동 구조 확인</h3>
+<p>일봉이 상승 추세라면, 4시간봉에서 조정 파동(눌림목)이 나타나는지 확인합니다. 조정 파동이 20MA 또는 50MA(4시간봉 기준)까지 내려왔다면 스윙 진입 후보 구간으로 표시합니다.</p>
+<h3 id="4-3-3단계-1시간봉에서-패턴-확인">4-3. 3단계: 1시간봉에서 패턴 확인</h3>
+<p>4시간봉에서 표시한 구간에 가격이 진입하면, 1시간봉으로 전환해 Engulfing·Pin Bar 같은 반전 패턴이 나타나는지 확인합니다. 이때 앞서 다룬 캔들 패턴의 진입 조건(거래량 1.5배 이상 등)을 그대로 적용합니다.</p>
+<h3 id="4-4-4단계-15분봉에서-정밀-트리거-확정">4-4. 4단계: 15분봉에서 정밀 트리거 확정</h3>
+<p>1시간봉에서 패턴이 확인되면, 15분봉으로 다시 전환해 실제 매수 주문을 넣을 캔들을 확정합니다. 15분봉에서 거래량이 직전 5개 캔들 평균 대비 1.5배 이상 증가한 캔들이 진입 트리거입니다.</p>
+<p>이 4단계를 표로 정리하면 다음과 같습니다.</p>
+<div class="table-wrap"><table><thead><tr><th>단계</th><th>타임프레임</th><th>확인 사항</th><th>통과 조건</th></tr></thead><tbody><tr><td>1</td><td>일봉</td><td>추세 방향, 200MA 위치</td><td>방향이 명확할 것</td></tr><tr><td>2</td><td>4H</td><td>조정 파동, MA 근접</td><td>20/50MA(4H) 접근</td></tr><tr><td>3</td><td>1H</td><td>반전 패턴 발생</td><td>거래량 1.5배 이상 동반</td></tr><tr><td>4</td><td>15M</td><td>트리거 캔들 확정</td><td>거래량 1.5배 이상, 방향 일치</td></tr></tbody></table></div>
+<h2 id="5-손절-익절-기준">5. 손절·익절 기준</h2>
+<p>MTF 매매의 손절은 진입에 사용한 타임프레임(대개 1시간봉)의 패턴 저가·고가를 기준으로 하되, 목표가는 상위 타임프레임(일봉)의 다음 저항·지지를 기준으로 잡습니다. 이렇게 하면 손절은 좁게, 목표는 넓게 잡을 수 있어 자연스럽게 손익비가 높아집니다.</p>
+<p>예를 들어 1시간봉 Pin Bar 저가가 240달러, 진입가가 245달러라면 리스크는 주당 5달러입니다. 일봉 차트에서 다음 저항이 265달러라면 목표 수익은 주당 20달러이며, 손익비는 1:4가 됩니다. 손익비가 최소 1:2를 넘지 못하면 진입을 재고해야 합니다.</p>
+<h2 id="6-가짜-시그널-구분법">6. 가짜 시그널 구분법</h2>
+<ul><li><strong>하위 타임프레임 신호만 보고 진입</strong>: 15분봉에서 완벽한 패턴이 나와도, 4시간봉·일봉에서 반대 방향 추세가 뚜렷하다면 역추세 매매가 됩니다. 이 경우 승률이 낮아지므로 포지션을 축소하거나 스킵합니다.</li><li><strong>타임프레임 간 지지·저항 불일치</strong>: 1시간봉에서는 지지처럼 보이는 구간이 일봉에서는 저항 근처에 걸쳐 있는 경우, 실제로는 매도 압력이 더 강한 구간일 수 있습니다.</li><li><strong>거래량 확인 생략</strong>: 상위 타임프레임 조건이 다 맞아도, 15분봉 트리거 캔들에 거래량이 동반되지 않으면 가짜 돌파일 가능성이 큽니다.</li></ul>
+<h2 id="7-실전-if-then-체크리스트">7. 실전 If-Then 체크리스트</h2>
+<ul><li class="task"><input type="checkbox" disabled>IF 일봉 추세 방향이 명확한가 → THEN 진행, 아니면 관망</li><li class="task"><input type="checkbox" disabled>IF 4시간봉에서 조정 파동이 MA 근처까지 왔는가 → THEN 진행, 아니면 대기</li><li class="task"><input type="checkbox" disabled>IF 1시간봉에서 반전 패턴 + 거래량 확인이 되는가 → THEN 진행, 아니면 관망</li><li class="task"><input type="checkbox" disabled>IF 15분봉 트리거 캔들 거래량이 평균 1.5배 이상인가 → THEN 진입, 아니면 대기</li><li class="task"><input type="checkbox" disabled>IF 손절(하위 타임프레임 기준)과 목표(상위 타임프레임 기준) 손익비가 1:2 이상인가 → THEN 진입, 아니면 스킵</li></ul>
+<h2 id="8-결론">8. 결론</h2>
+<p>MTF 분석의 핵심은 &quot;방향은 위에서, 타이밍은 아래에서&quot; 라는 한 문장으로 요약됩니다. 상위 타임프레임을 무시하고 하위 타임프레임만으로 매매하면 역추세 매매에 빠지기 쉽고, 반대로 하위 타임프레임 확인 없이 상위 타임프레임만으로 진입하면 손절폭이 불필요하게 커집니다. 다음 시간에는 지지·저항을 더 깊게 다루는 Supply/Demand Zone과 Liquidity Zone을 살펴봅니다.</p>
+        </div>
+        <div class="pt-6 border-t border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <a href="1-1.html" class="lesson-link rounded-xl p-4 space-y-1 transition">
+            <p class="text-[11px] text-slate-500">&larr; 이전 강의</p>
+            <p class="text-sm text-white font-medium">중급 1-1. 고급 캔들 패턴의 심리 구조와 실전 매매 전략 — Engulfing, Pin Bar, Doji</p>
+          </a>
+          <a href="1-3.html" class="lesson-link rounded-xl p-4 space-y-1 transition md:text-right">
+            <p class="text-[11px] text-slate-500">다음 강의 &rarr;</p>
+            <p class="text-sm text-white font-medium">중급 1-3. 지지·저항 심화 — Supply/Demand Zone과 Liquidity Zone</p>
+          </a>
+        </div>
+      </article>
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 space-y-3">
+          <div class="flex items-center justify-between px-1">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">과정 목차</p>
+            <a href="../../intermediate.html" class="text-[11px] text-sky-400 hover:text-sky-300">전체 보기</a>
+          </div>
+          <div class="card-bg rounded-2xl p-3 max-h-[calc(100vh-8rem)] overflow-y-auto space-y-3">
+            
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">차트 심화 <span class="text-[10px] font-medium text-amber-400/80">🔒 2강 잠김</span></p>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="1-1.html">1-1. 중급 1-1. 고급 캔들 패턴의 심리 구조와 실전 매매 전략 — Engulfing, Pin Bar, Doji</a>
+            <a class="sidebar-link is-current block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="1-2.html">1-2. 중급 1-2. 다중 타임프레임(MTF) 분석 — 일봉·4시간봉·1시간봉·15분봉 연계 전략</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="1-3.html">1-3. 중급 1-3. 지지·저항 심화 — Supply/Demand Zone과 Liquidity Zone</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="1-4.html">1-4. 중급 1-4. 이동평균선 심화 — EMA Ribbon, MA Slope, Trend Strength</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="1-5.html">1-5. 중급 1-5. 갭(Gap) 심화 — Gap Fill, Gap Hold, Breakaway Gap</a>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">1-6. 중급 1-6. 되돌림 비율 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">1-7. 중급 1-7. 차트 패턴 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">시장 구조와 유동성 <span class="lock-icon" aria-hidden="true">🔒</span></p>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">2-1. 중급 2-1. 시장 구조 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">2-2. 중급 2-2. 알고리즘 행동 패턴</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">2-3. 중급 2-3. 거래량 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">2-4. 중급 2-4. 변동성 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">2-5. 중급 2-5. 유동성 분석</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">2-6. 중급 2-6. 시장 참여자 구조</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">실전 매매 전략 <span class="lock-icon" aria-hidden="true">🔒</span></p>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-1. 중급 3-1. 상대강도 기반 종목 선정</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-2. 중급 3-2. 뉴스·실적 스크리닝</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-3. 중급 3-3. 장세 식별</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-4. 중급 3-4. 장세별 전략 스위칭</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-5. 중급 3-5. 데이 트레이딩 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-6. 중급 3-6. 스윙 트레이딩 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-7. 중급 3-7. 돌파 전략</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-8. 중급 3-8. 반전 전략</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-9. 중급 3-9. 트레이딩 툴 실전</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-10. 중급 3-10. 스크리너 세팅</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">리스크·자금 관리 <span class="lock-icon" aria-hidden="true">🔒</span></p>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">4-1. 중급 4-1. 변동성 기반 손절</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">4-2. 중급 4-2. 트레일링 스탑</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">4-3. 중급 4-3. 포지션 사이징 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">4-4. 중급 4-4. 자금 관리</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">4-5. 중급 4-5. 일일 손실 한도 설정</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">4-6. 중급 4-6. 계좌 보호 시스템</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">심리와 규율 <span class="lock-icon" aria-hidden="true">🔒</span></p>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">5-1. 중급 5-1. 감정 통제 실전</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">5-2. 중급 5-2. 손실 한도 준수 훈련</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">5-3. 중급 5-3. 손실 후 복구 전략</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">5-4. 중급 5-4. 매매 규율</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">5-5. 중급 5-5. 외부 자극 차단</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">5-6. 중급 5-6. 실수 방지 시스템</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">시스템 트레이딩 <span class="lock-icon" aria-hidden="true">🔒</span></p>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">6-1. 중급 6-1. 매매 전략 설계</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">6-2. 중급 6-2. 전략 백테스트 기초</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">6-3. 중급 6-3. 전략 필터링</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">6-4. 중급 6-4. 실전 적용</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">6-5. 중급 6-5. 시스템 트레이딩 사고방식</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+          </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  
+  <footer class="border-t border-slate-800 py-8 mt-12 bg-[#0b0f17]">
+    <div class="max-w-7xl mx-auto px-6 text-center text-xs text-slate-500 space-y-4">
+      <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2" aria-label="Legal">
+        <a href="../../about.html" class="hover:text-sky-400 transition">About</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../contact.html" class="hover:text-sky-400 transition">Contact</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../privacy.html" class="hover:text-sky-400 transition">Privacy Policy</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../terms.html" class="hover:text-sky-400 transition">Terms of Use</a>
+      </nav>
+      <p>© 2026 DawnQT Research. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <div id="member-gate-modal" class="member-modal" hidden>
+    <div class="member-modal-backdrop" data-member-close></div>
+    <div class="member-modal-card member-modal-card--beehiiv" role="dialog" aria-modal="true" aria-labelledby="member-gate-title" tabindex="-1">
+      <button type="button" class="member-modal-x" data-member-close aria-label="닫기">×</button>
+      <p class="member-modal-kicker">Member Access</p>
+      <h2 id="member-gate-title">멤버십 전용 강의</h2>
+      <p class="member-modal-copy">DawnQT Intelligence Hub 멤버십 전용 강의입니다. 이메일 구독 시 순차적으로 열람 권한이 제공됩니다.</p>
+      <div class="beehiiv-embed-wrap beehiiv-embed-wrap--modal" data-beehiiv-mount></div>
+    </div>
+  </div>
+  <script src="../../js/lang-selector.js" defer></script>
+  <script src="../../js/membership.js" defer></script>
+  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+</body>
+</html>

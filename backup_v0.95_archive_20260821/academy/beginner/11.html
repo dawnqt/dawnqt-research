@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>왕초보 11. 캔들 차트 이해 | DawnQT Intelligence Hub</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="왕초보 11. 캔들 차트 이해 — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DawnQT Intelligence Hub">
+  <meta property="og:title" content="왕초보 11. 캔들 차트 이해 | DawnQT Intelligence Hub">
+  <meta property="og:description" content="왕초보 11. 캔들 차트 이해 — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <meta property="og:url" content="https://dawnqt-research.vercel.app/academy/beginner/11.html">
+  <meta property="og:image" content="https://dawnqt-research.vercel.app/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="왕초보 11. 캔들 차트 이해 | DawnQT Intelligence Hub">
+  <meta name="twitter:description" content="왕초보 11. 캔들 차트 이해 — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/academy.css">
+  <link rel="stylesheet" href="../../css/content-protect.css">
+  <link rel="stylesheet" href="../../css/membership.css">
+  <link rel="stylesheet" href="../../css/beehiiv.css">
+  <script src="../../js/content-protect.js"></script>
+  
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+  
+  <header class="border-b border-slate-800 bg-[#0b0f17]/95 sticky top-0 z-[9999] backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="../../index.html" class="text-2xl font-bold tracking-tight font-serif-title text-white">Dawn<span class="text-sky-400">QT</span> Academy</a>
+      
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+        <a href="../../index.html#daily" class="hover:text-sky-400 transition">Daily Brew</a>
+        <a href="../../academy.html" class="hover:text-sky-400 transition flex items-center space-x-1">
+          <span class="text-xs text-sky-400">★</span> <span>트레이딩 교실</span>
+        </a>
+        <a href="../../themes.html" class="hover:text-sky-400 transition">Themes & Alpha</a>
+        <a href="../../data-arc.html" class="hover:text-sky-400 transition">Data Arc</a>
+        <a href="../../trader-note.html" class="hover:text-sky-400 transition">Trader's Note</a>
+      </nav>
+      <div class="lang-switcher-cluster">
+        <div class="lang-switcher notranslate" id="lang-switcher" translate="no">
+          <select class="lang-switcher-select notranslate" aria-label="Language" translate="no">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="zh-CN">简体中文</option>
+            <option value="ja">日本語</option>
+            <option value="hi">हिन्दी</option>
+            <option value="pt">Português (Brasil)</option>
+          </select>
+        </div>
+        <button type="button" class="js-subscribe subscribe-btn bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold px-4 py-2 rounded-lg transition" data-member-open>Subscribe</button>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-6 py-10 w-full">
+    <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-8">
+      <article class="space-y-6 min-w-0">
+        <div class="text-xs text-slate-500 space-x-2">
+          <a href="../../academy.html" class="hover:text-sky-400">트레이딩 교실</a>
+          <span>/</span>
+          <a href="../../beginner.html" class="hover:text-sky-400">왕초보 실전 교실</a>
+          <span>/</span>
+          <span class="text-slate-400">11</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <a href="../../beginner.html" class="course-pill is-active bg-sky-500 border-sky-500 text-slate-950 text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">왕초보</a>
+        <a href="../../intermediate.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">중급자</a>
+        <a href="../../advanced.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">고급</a>
+        <a href="../../psychology.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">심리지혜</a>
+        </div>
+        <section class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] font-semibold text-sky-400 bg-sky-950/80 border border-sky-800/80 px-2 py-0.5 rounded">Stage 1</span>
+            <span class="text-xs text-slate-500">11 / 20</span>
+          </div>
+          <h1 class="text-2xl md:text-3xl font-normal font-serif-title text-white leading-snug">왕초보 11. 캔들 차트 이해</h1>
+        </section>
+        <div class="inner-box-bg rounded-xl p-5 border-l-2 border-sky-500 space-y-2">
+          <p class="text-[11px] font-semibold uppercase tracking-wider text-sky-400">한눈에 답</p>
+          <p class="text-sm text-slate-300 leading-relaxed">캔들 하나는 특정 시간 동안 시가, 고가, 저가, 종가라는 네 가지 가격을 압축한 기록입니다. 미국 시장에서는 종가가 시가보다 높으면 초록색, 낮으면 빨간색으로 표시합니다(한국과 정반대이니 주의가 필요합니다). 이 색깔과 몸통·꼬리의 길이를 읽으면, 그 시간 동안 매수 세력과 매도 세력 중 누가 더 우세했는지 알 수 있습니다.</p>
+        </div>
+        <nav class="toc-mini inner-box-bg rounded-xl p-4 space-y-2">
+          <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">이 강의에서</p>
+          <ol class="space-y-1.5 text-xs">
+            <li><a href="#1-캔들-하나에-담긴-네-개의-숫자">1. 캔들 하나에 담긴 네 개의 숫자</a></li>
+            <li><a href="#2-몸통과-꼬리-승부의-결과와-과정">2. 몸통과 꼬리: 승부의 결과와 과정</a></li>
+            <li><a href="#3-미국-시장의-색깔-규칙-한국과-정반대">3. 미국 시장의 색깔 규칙: 한국과 정반대</a></li>
+            <li><a href="#4-꼬리가-알려주는-힘겨루기의-흔적">4. 꼬리가 알려주는 힘겨루기의 흔적</a></li>
+            <li><a href="#5-캔들-하나로-모든-것을-판단하면-안-되는-이유">5. 캔들 하나로 모든 것을 판단하면 안 되는 이유</a></li>
+            <li><a href="#6-시간-단위의-선택-무엇을-보느냐에-따라-달라지는-그림">6. 시간 단위의 선택: 무엇을 보느냐에 따라 달라지는 그림</a></li>
+            <li><a href="#7-초보자가-반드시-빠지는-함정">7. 초보자가 반드시 빠지는 함정</a></li>
+            <li><a href="#8-지금-바로-확인해볼-것">8. 지금 바로 확인해볼 것</a></li>
+            <li><a href="#9-다음-이야기">9. 다음 이야기</a></li>
+          </ol>
+        </nav>
+        <div class="lesson-body">
+          <h2 id="1-캔들-하나에-담긴-네-개의-숫자">1. 캔들 하나에 담긴 네 개의 숫자</h2>
+<p>캔들 하나는 특정 시간 단위(1분, 5분, 1일 등) 동안의 가격 움직임을 압축합니다. 이 시간이 시작될 때의 가격이 시가(Open), 끝날 때의 가격이 종가(Close), 그 사이 가장 높았던 가격이 고가(High), 가장 낮았던 가격이 저가(Low)입니다. 이 네 숫자를 OHLC라고 줄여 부릅니다.</p>
+<h2 id="2-몸통과-꼬리-승부의-결과와-과정">2. 몸통과 꼬리: 승부의 결과와 과정</h2>
+<p>캔들은 두 부분으로 이루어집니다. 시가와 종가 사이의 두꺼운 부분이 몸통(Body)이고, 고가·저가까지 뻗은 가느다란 선이 꼬리(Wick 또는 Shadow)입니다.</p>
+<p>이를 가장 정확하게 설명하는 비유는 스포츠 경기의 최종 스코어와 경기 중 최다 득점 기록입니다. 몸통은 &quot;경기가 시작했을 때 점수와 끝났을 때 점수의 차이&quot;, 즉 최종 승부 결과입니다. 꼬리는 &quot;경기 중 한때 얼마나 크게 앞서거나 뒤졌었는지&quot;를 보여주는 흔적입니다. 예를 들어 어떤 팀이 한때 20점 차로 크게 이기고 있었지만 막판에 5점 차로 좁혀져 끝났다면, 최종 스코어(몸통)는 5점 차이지만 경기 중 최대 격차(꼬리)는 20점이었다는 이야기가 캔들 하나에 함께 담깁니다.</p>
+<h2 id="3-미국-시장의-색깔-규칙-한국과-정반대">3. 미국 시장의 색깔 규칙: 한국과 정반대</h2>
+<p>이것이 한국 투자자가 미국 차트를 처음 볼 때 가장 자주 헷갈리는 부분입니다. 한국 시장은 관습적으로 상승을 빨간색, 하락을 파란색으로 표시합니다. 미국 시장은 정반대로, 상승(종가&gt;시가)을 초록색, 하락(종가&lt;시가)을 빨간색으로 표시합니다. 이 차이를 모른 채 미국 차트를 보면, 실제로는 급락한 종목을 상승했다고 착각하는 치명적인 실수를 할 수 있습니다. 이 책에서 앞으로 &quot;초록 캔들&quot;이라고 하면 상승, &quot;빨간 캔들&quot;이라고 하면 하락을 뜻합니다.</p>
+<h2 id="4-꼬리가-알려주는-힘겨루기의-흔적">4. 꼬리가 알려주는 힘겨루기의 흔적</h2>
+<p>윗꼬리(Upper Wick)가 길다는 것은, 가격이 한때 그만큼 높이 올라갔지만 결국 매도 세력에 밀려 그 수준을 지키지 못했다는 뜻입니다. 반대로 아랫꼬리(Lower Wick)가 길다는 것은, 가격이 한때 크게 밀렸지만 매수 세력이 그 하락을 되돌려놓았다는 뜻입니다.</p>
+<p>이 원리를 실전 감각으로 익히는 좋은 예는 2020년 3월 코로나 폭락의 저점 근처 캔들들입니다. 당시 여러 대형 지수와 종목의 일봉에서, 장중에는 극단적으로 급락했다가 종가는 저점보다 훨씬 높게 마감하며 매우 긴 아랫꼬리를 남긴 날들이 나타났습니다. 이는 극심한 공포 매도가 나온 순간에도, 그 가격대에서 저가 매수세가 강하게 유입되어 하락을 일부 되돌렸다는 것을 보여주는 흔적입니다. 이후 실제로 시장은 몇 주 안에 반등을 시작했습니다.</p>
+<h2 id="5-캔들-하나로-모든-것을-판단하면-안-되는-이유">5. 캔들 하나로 모든 것을 판단하면 안 되는 이유</h2>
+<p>여기서 중요한 균형 감각이 필요합니다. 긴 아랫꼬리 하나만으로 &quot;이제 바닥이다&quot;라고 단정하는 것은 성급합니다. 캔들 하나는 그 시간 동안의 심리를 보여줄 뿐, 미래를 예측하는 마법의 신호가 아닙니다. 실제로 위 코로나 사례에서도, 첫 번째 긴 아랫꼬리가 나온 이후에도 시장은 몇 차례 더 하락과 반등을 반복했습니다. 캔들은 다음 챕터에서 배울 추세, 그리고 뒤에서 다룰 거래량과 함께 봐야 신뢰도가 높아지는 정보입니다.</p>
+<h2 id="6-시간-단위의-선택-무엇을-보느냐에-따라-달라지는-그림">6. 시간 단위의 선택: 무엇을 보느냐에 따라 달라지는 그림</h2>
+<p>같은 종목이라도 1분봉, 1시간봉, 일봉, 주봉은 완전히 다른 이야기를 들려줍니다. 1분봉 하나하나는 그날의 미세한 움직임을 보여주지만 노이즈도 많습니다. 일봉은 하루 전체의 심리를, 주봉은 몇 주에 걸친 큰 흐름을 보여줍니다. 짧은 시간에 사고파는 전략을 쓰는 사람은 짧은 시간 단위를, 몇 주에서 몇 달을 보고 투자하는 사람은 긴 시간 단위를 주로 참고합니다. 어느 것이 &quot;맞는&quot; 시간 단위인지는 없으며, 자신의 투자 기간에 맞는 시간 단위를 선택하는 것이 중요합니다.</p>
+<h2 id="7-초보자가-반드시-빠지는-함정">7. 초보자가 반드시 빠지는 함정</h2>
+<p><strong>한국식 색깔 습관을 그대로 미국 차트에 적용하는 것.</strong> 초록이 상승이라는 것을 몸에 익히기 전까지는 캔들 색만 보고 순간적으로 반대로 판단할 위험이 있습니다.</p>
+<p><strong>꼬리 하나만 보고 성급하게 반전을 예단하는 것.</strong> 캔들 하나는 힌트일 뿐, 확정된 신호가 아닙니다.</p>
+<h2 id="8-지금-바로-확인해볼-것">8. 지금 바로 확인해볼 것</h2>
+<ul><li class="task"><input type="checkbox" disabled>관심 종목의 오늘 일봉이 초록인지 빨간인지, 그리고 그 이유(시가 대비 종가)를 직접 확인했는가</li><li class="task"><input type="checkbox" disabled>최근 캔들 중 유난히 꼬리가 긴 날이 있었다면, 그날 어떤 뉴스나 이벤트가 있었는지 찾아봤는가</li></ul>
+<h2 id="9-다음-이야기">9. 다음 이야기</h2>
+<p>캔들 하나가 그 순간의 심리를 보여준다면, 여러 캔들이 이어지며 만드는 흐름은 시장이 지금 어느 방향으로 걷고 있는지를 보여줍니다. 다음 챕터에서는 추세라는 개념을 통해, 개별 캔들들이 모여 만드는 더 큰 그림을 읽는 법을 배웁니다.</p>
+        </div>
+        <div class="pt-6 border-t border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <a href="10.html" class="lesson-link rounded-xl p-4 space-y-1 transition">
+            <p class="text-[11px] text-slate-500">&larr; 이전 강의</p>
+            <p class="text-sm text-white font-medium">왕초보 10. 기업 가치 평가 기초</p>
+          </a>
+          <a href="12.html" class="lesson-link rounded-xl p-4 space-y-1 transition md:text-right">
+            <p class="text-[11px] text-slate-500">다음 강의 &rarr;</p>
+            <p class="text-sm text-white font-medium">왕초보 12. 추세와 패턴</p>
+          </a>
+        </div>
+      </article>
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 space-y-3">
+          <div class="flex items-center justify-between px-1">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">과정 목차</p>
+            <a href="../../beginner.html" class="text-[11px] text-sky-400 hover:text-sky-300">전체 보기</a>
+          </div>
+          <div class="card-bg rounded-2xl p-3 max-h-[calc(100vh-8rem)] overflow-y-auto space-y-3">
+            
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">시장을 이해하다</p>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="01.html">01. 왕초보 1. 주식이란 무엇인가?</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="02.html">02. 왕초보 2. 주식 시장은 어떻게 움직이는가?</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="03.html">03. 왕초보 3. 미국 주식 시장의 구조</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="04.html">04. 왕초보 4. 주요 지수(S&amp;P500, 나스닥, 다우) 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="05.html">05. 왕초보 5. 시장 참여자(개인, 기관, 알고리즘)</a>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">숫자를 읽다</p>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="06.html">06. 왕초보 6. 재무제표 기초</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="07.html">07. 왕초보 7. 손익계산서 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="08.html">08. 왕초보 8. 대차대조표 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="09.html">09. 왕초보 9. 현금흐름표 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="10.html">10. 왕초보 10. 기업 가치 평가 기초</a>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">차트를 읽다</p>
+            <a class="sidebar-link is-current block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="11.html">11. 왕초보 11. 캔들 차트 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="12.html">12. 왕초보 12. 추세와 패턴</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="13.html">13. 왕초보 13. 이동평균선(MA) 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="14.html">14. 왕초보 14. 거래량 분석</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="15.html">15. 왕초보 15. 주요 기술적 지표(RSI, MACD 등)</a>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">실전에 들어가다</p>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="16.html">16. 왕초보 16. 데이 트레이딩이란? (2026년 개정판)</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="17.html">17. 왕초보 17. 스윙 트레이딩 기초</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="18.html">18. 왕초보 18. 리스크 관리 기초</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="19.html">19. 왕초보 19. 포지션 사이징</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="20.html">20. 왕초보 20. 트레이딩 심리 기초 — 왕초보 과정을 마치며</a>
+          </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  
+  <footer class="border-t border-slate-800 py-8 mt-12 bg-[#0b0f17]">
+    <div class="max-w-7xl mx-auto px-6 text-center text-xs text-slate-500 space-y-4">
+      <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2" aria-label="Legal">
+        <a href="../../about.html" class="hover:text-sky-400 transition">About</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../contact.html" class="hover:text-sky-400 transition">Contact</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../privacy.html" class="hover:text-sky-400 transition">Privacy Policy</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../terms.html" class="hover:text-sky-400 transition">Terms of Use</a>
+      </nav>
+      <p>© 2026 DawnQT Research. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <div id="member-gate-modal" class="member-modal" hidden>
+    <div class="member-modal-backdrop" data-member-close></div>
+    <div class="member-modal-card member-modal-card--beehiiv" role="dialog" aria-modal="true" aria-labelledby="member-gate-title" tabindex="-1">
+      <button type="button" class="member-modal-x" data-member-close aria-label="닫기">×</button>
+      <p class="member-modal-kicker">Member Access</p>
+      <h2 id="member-gate-title">멤버십 전용 강의</h2>
+      <p class="member-modal-copy">DawnQT Intelligence Hub 멤버십 전용 강의입니다. 이메일 구독 시 순차적으로 열람 권한이 제공됩니다.</p>
+      <div class="beehiiv-embed-wrap beehiiv-embed-wrap--modal" data-beehiiv-mount></div>
+    </div>
+  </div>
+  <script src="../../js/lang-selector.js" defer></script>
+  <script src="../../js/membership.js" defer></script>
+  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+</body>
+</html>

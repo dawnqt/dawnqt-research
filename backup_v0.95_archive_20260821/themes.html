@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Themes &amp; Alpha | DawnQT Intelligence Hub</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="Themes &amp; Alpha — structural market themes and alpha research from DawnQT Intelligence Hub.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DawnQT Intelligence Hub">
+  <meta property="og:title" content="Themes &amp; Alpha | DawnQT Intelligence Hub">
+  <meta property="og:description" content="Themes &amp; Alpha — structural market themes and alpha research from DawnQT Intelligence Hub.">
+  <meta property="og:url" content="https://dawnqt-research.vercel.app/themes.html">
+  <meta property="og:image" content="https://dawnqt-research.vercel.app/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Themes &amp; Alpha | DawnQT Intelligence Hub">
+  <meta name="twitter:description" content="Themes &amp; Alpha — structural market themes and alpha research from DawnQT Intelligence Hub.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { background-color: #0b0f17; color: #f1f5f9; font-family: 'Inter', sans-serif; }
+    .font-serif-title { font-family: 'Instrument Serif', serif; }
+    .card-bg { background-color: #161e2e; border: 1px solid #222d3d; }
+    .card-bg:hover { border-color: #334155; transition: all 0.2s ease-in-out; }
+    .inner-box-bg { background-color: #111827; border: 1px solid #1f2937; }
+    .filter-pill { background-color: #111827; border: 1px solid #1f2937; color: #cbd5e1; }
+    .filter-pill:hover { border-color: #334155; color: #e2e8f0; }
+    .filter-pill.is-active { background-color: #0ea5e9; border-color: #0ea5e9; color: #020617; }
+    header { overflow: visible; z-index: 9999; }
+    .lang-switcher-cluster { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; position: relative; z-index: 9999; }
+    .lang-switcher { position: relative; z-index: 9999; flex-shrink: 0; }
+    .lang-switcher-select {
+      display: block; appearance: none; -webkit-appearance: none; height: 2.25rem; min-width: 10rem;
+      padding: 0 2rem 0 0.75rem; border: 1px solid #38bdf8; border-radius: 0.5rem;
+      background-color: #1e293b; color: #ffffff; font-size: 12px; font-weight: 600;
+      font-family: Inter, system-ui, sans-serif; cursor: pointer; z-index: 9999; position: relative; color-scheme: dark;
+    }
+    .lang-switcher-select option { background: #1e293b; color: #ffffff; }
+  </style>
+  <link rel="stylesheet" href="css/content-protect.css">
+  <link rel="stylesheet" href="css/membership.css">
+  <link rel="stylesheet" href="css/beehiiv.css">
+  <script src="js/content-protect.js"></script>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+  <header class="border-b border-slate-800 bg-[#0b0f17]/95 sticky top-0 z-[9999] backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-bold tracking-tight font-serif-title text-white">Dawn<span class="text-sky-400">QT</span> Research</a>
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+        <a href="index.html#daily" class="hover:text-sky-400 transition">Daily Brew</a>
+        <a href="academy.html" class="hover:text-sky-400 transition flex items-center space-x-1">
+          <span class="text-xs text-sky-400">★</span> <span>트레이딩 교실</span>
+        </a>
+        <a href="themes.html" class="hover:text-sky-400 transition">Themes & Alpha</a>
+        <a href="data-arc.html" class="hover:text-sky-400 transition">Data Arc</a>
+        <a href="trader-note.html" class="hover:text-sky-400 transition">Trader's Note</a>
+      </nav>
+      <div class="lang-switcher-cluster">
+        <div class="lang-switcher notranslate" id="lang-switcher" translate="no">
+          <select class="lang-switcher-select notranslate" aria-label="Language" translate="no">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="zh-CN">简体中文</option>
+            <option value="ja">日本語</option>
+            <option value="hi">हिन्दी</option>
+            <option value="pt">Português (Brasil)</option>
+          </select>
+        </div>
+        <button type="button" class="js-subscribe subscribe-btn bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold px-4 py-2 rounded-lg transition" data-member-open>Subscribe</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-8">
+    <section class="space-y-3">
+      <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Deep Research</span>
+      <h1 class="text-2xl md:text-3xl font-normal font-serif-title text-white">Mega Themes &amp; Tactical Alpha</h1>
+      <p class="text-sm text-slate-400 leading-relaxed max-w-3xl">
+        Identifying structural tailwinds across global capital flows. News is noise until it maps onto a sector, a ticker set, and a defined risk.
+      </p>
+    </section>
+
+    <section class="flex flex-wrap gap-2" id="theme-filters" aria-label="Theme categories">
+      <button type="button" data-filter="all" class="filter-pill is-active text-[11px] font-semibold px-3 py-1.5 rounded-full transition">All</button>
+      <button type="button" data-filter="ai-infrastructure" class="filter-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition">AI Infrastructure</button>
+      <button type="button" data-filter="semiconductor" class="filter-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition">Semiconductor</button>
+      <button type="button" data-filter="energy-grid" class="filter-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition">Energy/Grid</button>
+      <button type="button" data-filter="macro-shifts" class="filter-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition">Macro Shifts</button>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-4" id="theme-cards">
+      <article class="theme-card card-bg rounded-2xl p-6 space-y-4 flex flex-col" data-tags="ai-infrastructure energy-grid">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-semibold text-sky-400 bg-sky-950/80 border border-sky-800/80 px-2 py-0.5 rounded">AI Infrastructure</span>
+            <span class="text-[10px] font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-2 py-0.5 rounded">Energy/Grid</span>
+          </div>
+          <span class="text-xs text-slate-500">6 min read</span>
+        </div>
+        <h2 class="text-lg font-normal font-serif-title text-white leading-snug">AI Data Center Power Crunch</h2>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Grid bottleneck &amp; clean energy plays. Compute demand is no longer gated by GPUs alone — interconnection queues and baseload scarcity now set the pace of AI capex.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 mt-auto">
+          <div class="inner-box-bg p-3 rounded-xl space-y-1">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-sky-400">01 Macro Trigger</p>
+            <p>Hyperscaler power PPAs outrun regional grid capacity; interconnection backlogs stretch 4–7 years.</p>
+          </div>
+          <div class="inner-box-bg p-3 rounded-xl space-y-1">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-sky-400">02 Target Sector</p>
+            <p>Independent power, nuclear, natural gas midstream, and electrical equipment.</p>
+          </div>
+          <div class="inner-box-bg p-3 rounded-xl space-y-1">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-sky-400">03 Key Tickers</p>
+            <p class="font-mono text-slate-200">VST · CEG · GEV · NEE · ETN</p>
+          </div>
+          <div class="inner-box-bg p-3 rounded-xl space-y-1">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-amber-400">04 Tactical Risk</p>
+            <p>Policy delay, demand overstatement, and rate-sensitive multiple compression in utilities.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="theme-card card-bg rounded-2xl p-6 space-y-4 flex flex-col" data-tags="semiconductor ai-infrastructure">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-semibold text-violet-400 bg-violet-950/80 border border-violet-800/80 px-2 py-0.5 rounded">Semiconductor</span>
+            <span class="text-[10px] font-semibold text-sky-400 bg-sky-950/80 border border-sky-800/80 px-2 py-0.5 rounded">AI Infrastructure</span>
+          </div>
+          <span class="text-xs text-slate-500">7 min read</span>
+        </div>
+        <h2 class="text-lg font-normal font-serif-title text-white leading-snug">High Bandwidth Memory (HBM) &amp; Semiconductor Capex Cycle</h2>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          HBM is the binding constraint on AI accelerators. Memory pricing power and advanced-packaging capex are the second-order trade after the GPU headline.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 mt-auto">
+          <div class="inner-box-bg p-3 rounded-xl space-y-1">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-sky-400">01 Macro Trigger</p>
+            <p>HBM sold-out through 2026; GPU shipments wait on stacked-memory yield, not foundry wafers.</p>
+          </div>
+          <div class="inner-box-bg p-3 rounded-xl space-y-1">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-sky-400">02 Target Sector</p>
+            <p>HBM producers, foundry, and WFE (deposition, etch, advanced packaging).</p>
+          </div>
+          <div class="inner-box-bg p-3 rounded-xl space-y-1">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-sky-400">03 Key Tickers</p>
+            <p class="font-mono text-slate-200">MU · TSM · AMAT · LRCX · 000660.KS</p>
+          </div>
+          <div class="inner-box-bg p-3 rounded-xl space-y-1">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-amber-400">04 Tactical Risk</p>
+            <p>Hyperscaler capex pause, export-control shocks, and a classic memory inventory cycle.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="theme-card card-bg rounded-2xl p-6 space-y-4 flex flex-col" data-tags="macro-shifts">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-semibold text-slate-300 bg-slate-800 px-2 py-0.5 rounded">Macro Shifts</span>
+          </div>
+          <span class="text-xs text-slate-500">5 min read</span>
+        </div>
+        <h2 class="text-lg font-normal font-serif-title text-white leading-snug">Small-cap Rotation vs. Mega-cap Tech Divergence</h2>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Index concentration is a feature until breadth turns. When the rate path and credit conditions ease, capital historically leaves a handful of megacaps for neglected cyclicals.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 mt-auto">
+          <div class="inner-box-bg p-3 rounded-xl space-y-1">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-sky-400">01 Macro Trigger</p>
+            <p>Soft-landing rate-cut path plus a widening equal-weight vs. cap-weight gap.</p>
+          </div>
+          <div class="inner-box-bg p-3 rounded-xl space-y-1">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-sky-400">02 Target Sector</p>
+            <p>Russell 2000, regional banks, and industrial cyclicals versus mega-cap tech.</p>
+          </div>
+          <div class="inner-box-bg p-3 rounded-xl space-y-1">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-sky-400">03 Key Tickers</p>
+            <p class="font-mono text-slate-200">IWM · KRE · XLI vs. QQQ · NVDA</p>
+          </div>
+          <div class="inner-box-bg p-3 rounded-xl space-y-1">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-amber-400">04 Tactical Risk</p>
+            <p>Sticky inflation, a stronger dollar, and a liquidity fade that snaps capital back to quality.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800 py-8 mt-12 bg-[#0b0f17]">
+    <div class="max-w-7xl mx-auto px-6 text-center text-xs text-slate-500 space-y-4">
+      <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2" aria-label="Legal">
+        <a href="about.html" class="hover:text-sky-400 transition">About</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="contact.html" class="hover:text-sky-400 transition">Contact</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="privacy.html" class="hover:text-sky-400 transition">Privacy Policy</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="terms.html" class="hover:text-sky-400 transition">Terms of Use</a>
+      </nav>
+      <p>© 2026 DawnQT Research. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const pills = document.querySelectorAll('#theme-filters [data-filter]');
+    const cards = document.querySelectorAll('.theme-card');
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const filter = pill.dataset.filter;
+        pills.forEach(p => p.classList.toggle('is-active', p === pill));
+        cards.forEach(card => {
+          const tags = (card.dataset.tags || '').split(/\s+/);
+          const show = filter === 'all' || tags.includes(filter);
+          card.classList.toggle('hidden', !show);
+        });
+      });
+    });
+  </script>
+  <script src="js/lang-selector.js" defer></script>
+  <script src="js/membership.js" defer></script>
+  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>왕초보 13. 이동평균선(MA) 이해 | DawnQT Intelligence Hub</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="왕초보 13. 이동평균선(MA) 이해 — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DawnQT Intelligence Hub">
+  <meta property="og:title" content="왕초보 13. 이동평균선(MA) 이해 | DawnQT Intelligence Hub">
+  <meta property="og:description" content="왕초보 13. 이동평균선(MA) 이해 — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <meta property="og:url" content="https://dawnqt-research.vercel.app/academy/beginner/13.html">
+  <meta property="og:image" content="https://dawnqt-research.vercel.app/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="왕초보 13. 이동평균선(MA) 이해 | DawnQT Intelligence Hub">
+  <meta name="twitter:description" content="왕초보 13. 이동평균선(MA) 이해 — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/academy.css">
+  <link rel="stylesheet" href="../../css/content-protect.css">
+  <link rel="stylesheet" href="../../css/membership.css">
+  <link rel="stylesheet" href="../../css/beehiiv.css">
+  <script src="../../js/content-protect.js"></script>
+  
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+  
+  <header class="border-b border-slate-800 bg-[#0b0f17]/95 sticky top-0 z-[9999] backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="../../index.html" class="text-2xl font-bold tracking-tight font-serif-title text-white">Dawn<span class="text-sky-400">QT</span> Academy</a>
+      
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+        <a href="../../index.html#daily" class="hover:text-sky-400 transition">Daily Brew</a>
+        <a href="../../academy.html" class="hover:text-sky-400 transition flex items-center space-x-1">
+          <span class="text-xs text-sky-400">★</span> <span>트레이딩 교실</span>
+        </a>
+        <a href="../../themes.html" class="hover:text-sky-400 transition">Themes & Alpha</a>
+        <a href="../../data-arc.html" class="hover:text-sky-400 transition">Data Arc</a>
+        <a href="../../trader-note.html" class="hover:text-sky-400 transition">Trader's Note</a>
+      </nav>
+      <div class="lang-switcher-cluster">
+        <div class="lang-switcher notranslate" id="lang-switcher" translate="no">
+          <select class="lang-switcher-select notranslate" aria-label="Language" translate="no">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="zh-CN">简体中文</option>
+            <option value="ja">日本語</option>
+            <option value="hi">हिन्दी</option>
+            <option value="pt">Português (Brasil)</option>
+          </select>
+        </div>
+        <button type="button" class="js-subscribe subscribe-btn bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold px-4 py-2 rounded-lg transition" data-member-open>Subscribe</button>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-6 py-10 w-full">
+    <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-8">
+      <article class="space-y-6 min-w-0">
+        <div class="text-xs text-slate-500 space-x-2">
+          <a href="../../academy.html" class="hover:text-sky-400">트레이딩 교실</a>
+          <span>/</span>
+          <a href="../../beginner.html" class="hover:text-sky-400">왕초보 실전 교실</a>
+          <span>/</span>
+          <span class="text-slate-400">13</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <a href="../../beginner.html" class="course-pill is-active bg-sky-500 border-sky-500 text-slate-950 text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">왕초보</a>
+        <a href="../../intermediate.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">중급자</a>
+        <a href="../../advanced.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">고급</a>
+        <a href="../../psychology.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">심리지혜</a>
+        </div>
+        <section class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] font-semibold text-sky-400 bg-sky-950/80 border border-sky-800/80 px-2 py-0.5 rounded">Stage 1</span>
+            <span class="text-xs text-slate-500">13 / 20</span>
+          </div>
+          <h1 class="text-2xl md:text-3xl font-normal font-serif-title text-white leading-snug">왕초보 13. 이동평균선(MA) 이해</h1>
+        </section>
+        <div class="inner-box-bg rounded-xl p-5 border-l-2 border-sky-500 space-y-2">
+          <p class="text-[11px] font-semibold uppercase tracking-wider text-sky-400">한눈에 답</p>
+          <p class="text-sm text-slate-300 leading-relaxed">이동평균선은 최근 일정 기간의 종가를 평균 내어 이은 선으로, 들쭉날쭉한 가격의 노이즈를 걸러내고 추세의 방향을 매끄럽게 보여줍니다. 가장 많이 쓰는 것은 20일선(단기), 50일선(중기), 200일선(장기)이며, 특히 200일선은 &quot;이 선 위면 상승장, 아래면 하락장&quot;이라는 경험칙으로 미국 시장에서 폭넓게 쓰입니다.</p>
+        </div>
+        <nav class="toc-mini inner-box-bg rounded-xl p-4 space-y-2">
+          <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">이 강의에서</p>
+          <ol class="space-y-1.5 text-xs">
+            <li><a href="#1-왜-평균을-내는가-초당-배송-앱의-별점-비유">1. 왜 평균을 내는가: 초당 배송 앱의 별점 비유</a></li>
+            <li><a href="#2-세-가지-기간-세-가지-시야">2. 세 가지 기간, 세 가지 시야</a></li>
+            <li><a href="#3-200일선이-특별히-중요한-이유">3. 200일선이 특별히 중요한 이유</a></li>
+            <li><a href="#4-이동평균선의-배열이-알려주는-것">4. 이동평균선의 배열이 알려주는 것</a></li>
+            <li><a href="#5-골든크로스와-데드크로스">5. 골든크로스와 데드크로스</a></li>
+            <li><a href="#6-초보자가-반드시-빠지는-함정">6. 초보자가 반드시 빠지는 함정</a></li>
+            <li><a href="#7-지금-바로-확인해볼-것">7. 지금 바로 확인해볼 것</a></li>
+            <li><a href="#8-다음-이야기">8. 다음 이야기</a></li>
+          </ol>
+        </nav>
+        <div class="lesson-body">
+          <h2 id="1-왜-평균을-내는가-초당-배송-앱의-별점-비유">1. 왜 평균을 내는가: 초당 배송 앱의 별점 비유</h2>
+<p>이동평균선의 원리를 이해하는 가장 쉬운 방법은 배달 앱의 별점 시스템을 떠올리는 것입니다. 한 식당이 오늘 딱 한 명의 리뷰만 받았는데 그 사람이 별 1개를 줬다면, 그 식당의 오늘 평점은 1점입니다. 하지만 이 식당이 원래 평균 4.5점을 받아온 곳이라면, 오늘의 극단적인 리뷰 하나로 이 식당을 나쁜 식당이라 단정하는 것은 성급합니다. 최근 100개 리뷰의 평균을 보면 이 식당의 진짜 실력이 더 정확하게 드러납니다.</p>
+<p>주가도 마찬가지입니다. 어느 하루의 급등이나 급락은 일시적인 뉴스나 소수의 대량 주문 때문일 수 있습니다. 최근 20일, 50일, 200일의 평균 가격을 보면, 이런 하루하루의 소음을 걸러내고 &quot;이 종목이 최근 전반적으로 어느 방향으로 움직여왔는가&quot;라는 진짜 흐름이 드러납니다.</p>
+<h2 id="2-세-가지-기간-세-가지-시야">2. 세 가지 기간, 세 가지 시야</h2>
+<div class="table-wrap"><table><thead><tr><th>이동평균선</th><th>기간</th><th>보여주는 것</th></tr></thead><tbody><tr><td>20일선</td><td>최근 약 한 달</td><td>단기 흐름</td></tr><tr><td>50일선</td><td>최근 약 두 달 반</td><td>중기 흐름</td></tr><tr><td>200일선</td><td>최근 약 열 달</td><td>장기 흐름</td></tr></tbody></table></div>
+<p>가격이 이 선들 위에 있는지 아래에 있는지가 가장 기본적인 판단 기준입니다. 가격이 200일선 위에 있다면 장기적으로 상승 흐름을 유지하고 있다는 뜻이고, 아래에 있다면 장기 하락 흐름에 있다는 뜻입니다.</p>
+<h2 id="3-200일선이-특별히-중요한-이유">3. 200일선이 특별히 중요한 이유</h2>
+<p>미국 시장에는 &quot;200일 이동평균선을 기준으로 상승장과 하락장을 나눈다&quot;는 오래된 경험칙이 있습니다. 이 선이 특별히 주목받는 이유는, 워낙 많은 기관 투자자와 트레이더들이 이 기준을 함께 참고하기 때문입니다. 많은 사람이 같은 선을 보고 있다는 사실 자체가, 그 선 근처에서 실제로 매수·매도 결정이 몰리게 만들어 자기실현적인 힘을 갖게 됩니다.</p>
+<p>실제로 2022년 S&amp;P500이 200일선을 하향 이탈한 이후, 그해 대부분의 기간 동안 지수는 200일선 아래에서 머물며 전체적으로 19% 하락한 약세장을 보냈습니다. 반대로 2023년 초 지수가 다시 200일선을 상향 돌파하자, 이후 한 해 동안 강한 상승 흐름이 이어졌습니다. 물론 이 선 하나가 미래를 완벽하게 예측하는 것은 아니지만, 시장 전체의 큰 흐름을 판단하는 신뢰할 만한 참고선으로 널리 쓰이고 있습니다.</p>
+<h2 id="4-이동평균선의-배열이-알려주는-것">4. 이동평균선의 배열이 알려주는 것</h2>
+<p>세 개의 이동평균선을 함께 보면 추세의 건강 상태를 더 입체적으로 판단할 수 있습니다. 20일선이 50일선 위에 있고, 50일선이 다시 200일선 위에 있는 순서로 배열되어 있다면(짧은 기간일수록 위), 이는 단기·중기·장기 흐름이 모두 상승으로 일치하고 있다는 뜻으로 강한 상승 신호로 해석됩니다. 이 순서가 뒤섞이거나 역전되면, 추세가 흔들리고 있다는 조기 경고로 볼 수 있습니다.</p>
+<h2 id="5-골든크로스와-데드크로스">5. 골든크로스와 데드크로스</h2>
+<p>짧은 기간의 이동평균선이 긴 기간의 이동평균선을 아래에서 위로 뚫고 올라가는 것을 골든크로스라고 부르며, 상승 전환의 신호로 여겨집니다. 반대로 위에서 아래로 뚫고 내려가는 것은 데드크로스라 부르며, 하락 전환의 신호로 여겨집니다. 가장 널리 쓰이는 조합은 50일선과 200일선의 교차입니다. 다만 이 신호는 성격상 이미 상당한 가격 변화가 일어난 뒤에야 나타나는 후행 지표라는 한계가 있습니다. 즉 골든크로스가 확인되는 시점에는 이미 상승이 상당히 진행된 경우가 많습니다.</p>
+<h2 id="6-초보자가-반드시-빠지는-함정">6. 초보자가 반드시 빠지는 함정</h2>
+<p><strong>이동평균선을 미래 예측 도구로 오해하는 것.</strong> 이동평균선은 과거 가격의 평균일 뿐, 미래를 알려주는 것이 아닙니다. 지금까지의 흐름을 명확하게 정리해서 보여주는 도구로 이해해야 합니다.</p>
+<p><strong>단기 이동평균선의 작은 움직임에 일희일비하는 것.</strong> 20일선은 최근 가격 변화에 민감하게 반응하기 때문에 자주 흔들립니다. 큰 그림을 볼 때는 200일선처럼 긴 기간을 함께 참고해야 합니다.</p>
+<h2 id="7-지금-바로-확인해볼-것">7. 지금 바로 확인해볼 것</h2>
+<ul><li class="task"><input type="checkbox" disabled>관심 종목의 현재가가 20일선, 50일선, 200일선 각각의 위에 있는지 아래에 있는지 확인했는가</li><li class="task"><input type="checkbox" disabled>세 이동평균선이 상승 배열(20&gt;50&gt;200 순서)인지, 아니면 뒤섞여 있는지 확인했는가</li><li class="task"><input type="checkbox" disabled>최근 골든크로스나 데드크로스가 있었다면 그 시점의 가격과 지금 가격을 비교해봤는가</li></ul>
+<h2 id="8-다음-이야기">8. 다음 이야기</h2>
+<p>가격의 방향을 이동평균선으로 확인했다면, 이제 그 방향에 얼마나 많은 사람이 실제로 참여하고 있는지 확인할 차례입니다. 다음 챕터에서는 거래량을 통해, 가격의 움직임 뒤에 진짜 돈이 얼마나 들어오고 나가는지 살펴봅니다.</p>
+        </div>
+        <div class="pt-6 border-t border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <a href="12.html" class="lesson-link rounded-xl p-4 space-y-1 transition">
+            <p class="text-[11px] text-slate-500">&larr; 이전 강의</p>
+            <p class="text-sm text-white font-medium">왕초보 12. 추세와 패턴</p>
+          </a>
+          <a href="14.html" class="lesson-link rounded-xl p-4 space-y-1 transition md:text-right">
+            <p class="text-[11px] text-slate-500">다음 강의 &rarr;</p>
+            <p class="text-sm text-white font-medium">왕초보 14. 거래량 분석</p>
+          </a>
+        </div>
+      </article>
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 space-y-3">
+          <div class="flex items-center justify-between px-1">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">과정 목차</p>
+            <a href="../../beginner.html" class="text-[11px] text-sky-400 hover:text-sky-300">전체 보기</a>
+          </div>
+          <div class="card-bg rounded-2xl p-3 max-h-[calc(100vh-8rem)] overflow-y-auto space-y-3">
+            
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">시장을 이해하다</p>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="01.html">01. 왕초보 1. 주식이란 무엇인가?</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="02.html">02. 왕초보 2. 주식 시장은 어떻게 움직이는가?</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="03.html">03. 왕초보 3. 미국 주식 시장의 구조</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="04.html">04. 왕초보 4. 주요 지수(S&amp;P500, 나스닥, 다우) 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="05.html">05. 왕초보 5. 시장 참여자(개인, 기관, 알고리즘)</a>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">숫자를 읽다</p>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="06.html">06. 왕초보 6. 재무제표 기초</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="07.html">07. 왕초보 7. 손익계산서 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="08.html">08. 왕초보 8. 대차대조표 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="09.html">09. 왕초보 9. 현금흐름표 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="10.html">10. 왕초보 10. 기업 가치 평가 기초</a>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">차트를 읽다</p>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="11.html">11. 왕초보 11. 캔들 차트 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="12.html">12. 왕초보 12. 추세와 패턴</a>
+            <a class="sidebar-link is-current block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="13.html">13. 왕초보 13. 이동평균선(MA) 이해</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="14.html">14. 왕초보 14. 거래량 분석</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="15.html">15. 왕초보 15. 주요 기술적 지표(RSI, MACD 등)</a>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">실전에 들어가다</p>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="16.html">16. 왕초보 16. 데이 트레이딩이란? (2026년 개정판)</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="17.html">17. 왕초보 17. 스윙 트레이딩 기초</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="18.html">18. 왕초보 18. 리스크 관리 기초</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="19.html">19. 왕초보 19. 포지션 사이징</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="20.html">20. 왕초보 20. 트레이딩 심리 기초 — 왕초보 과정을 마치며</a>
+          </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  
+  <footer class="border-t border-slate-800 py-8 mt-12 bg-[#0b0f17]">
+    <div class="max-w-7xl mx-auto px-6 text-center text-xs text-slate-500 space-y-4">
+      <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2" aria-label="Legal">
+        <a href="../../about.html" class="hover:text-sky-400 transition">About</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../contact.html" class="hover:text-sky-400 transition">Contact</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../privacy.html" class="hover:text-sky-400 transition">Privacy Policy</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../terms.html" class="hover:text-sky-400 transition">Terms of Use</a>
+      </nav>
+      <p>© 2026 DawnQT Research. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <div id="member-gate-modal" class="member-modal" hidden>
+    <div class="member-modal-backdrop" data-member-close></div>
+    <div class="member-modal-card member-modal-card--beehiiv" role="dialog" aria-modal="true" aria-labelledby="member-gate-title" tabindex="-1">
+      <button type="button" class="member-modal-x" data-member-close aria-label="닫기">×</button>
+      <p class="member-modal-kicker">Member Access</p>
+      <h2 id="member-gate-title">멤버십 전용 강의</h2>
+      <p class="member-modal-copy">DawnQT Intelligence Hub 멤버십 전용 강의입니다. 이메일 구독 시 순차적으로 열람 권한이 제공됩니다.</p>
+      <div class="beehiiv-embed-wrap beehiiv-embed-wrap--modal" data-beehiiv-mount></div>
+    </div>
+  </div>
+  <script src="../../js/lang-selector.js" defer></script>
+  <script src="../../js/membership.js" defer></script>
+  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>중급 1-4. 이동평균선 심화 — EMA Ribbon, MA Slope, Trend Strength | DawnQT Intelligence Hub</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20role%3D%22img%22%20aria-label%3D%22DawnQT%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%20%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2230.5%22%20height%3D%2230.5%22%20rx%3D%227.25%22%20fill%3D%22none%22%20stroke%3D%22%23164e63%22%20stroke-width%3D%221.5%22%2F%3E%20%3Cpath%20fill%3D%22%2338bdf8%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%206.8h8.55c5.05%200%208.65%203.45%208.65%209.2s-3.6%209.2-8.65%209.2H8.6V6.8zm3.2%203.15v12.1h5.35c3.2%200%205.25-2.2%205.25-6.05s-2.05-6.05-5.25-6.05H11.8z%22%2F%3E%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%237dd3fc%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20points%3D%2212.2%2021.2%2015.4%2017.15%2017.55%2018.55%2022.35%2012.35%22%2F%3E%20%3Ccircle%20cx%3D%2222.35%22%20cy%3D%2212.35%22%20r%3D%221.45%22%20fill%3D%22%2322d3ee%22%2F%3E%20%3C%2Fsvg%3E">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="중급 1-4. 이동평균선 심화 — EMA Ribbon, MA Slope, Trend Strength — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DawnQT Intelligence Hub">
+  <meta property="og:title" content="중급 1-4. 이동평균선 심화 — EMA Ribbon, MA Slope, Trend Strength | DawnQT Intelligence Hub">
+  <meta property="og:description" content="중급 1-4. 이동평균선 심화 — EMA Ribbon, MA Slope, Trend Strength — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <meta property="og:url" content="https://dawnqt-research.vercel.app/academy/intermediate/1-4.html">
+  <meta property="og:image" content="https://dawnqt-research.vercel.app/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="중급 1-4. 이동평균선 심화 — EMA Ribbon, MA Slope, Trend Strength | DawnQT Intelligence Hub">
+  <meta name="twitter:description" content="중급 1-4. 이동평균선 심화 — EMA Ribbon, MA Slope, Trend Strength — DawnQT Intelligence Hub. Global market intelligence and rule-based trading academy.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/academy.css">
+  <link rel="stylesheet" href="../../css/content-protect.css">
+  <link rel="stylesheet" href="../../css/membership.css">
+  <link rel="stylesheet" href="../../css/beehiiv.css">
+  <script src="../../js/content-protect.js"></script>
+  
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+  
+  <header class="border-b border-slate-800 bg-[#0b0f17]/95 sticky top-0 z-[9999] backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="../../index.html" class="text-2xl font-bold tracking-tight font-serif-title text-white">Dawn<span class="text-sky-400">QT</span> Academy</a>
+      
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+        <a href="../../index.html#daily" class="hover:text-sky-400 transition">Daily Brew</a>
+        <a href="../../academy.html" class="hover:text-sky-400 transition flex items-center space-x-1">
+          <span class="text-xs text-sky-400">★</span> <span>트레이딩 교실</span>
+        </a>
+        <a href="../../themes.html" class="hover:text-sky-400 transition">Themes & Alpha</a>
+        <a href="../../data-arc.html" class="hover:text-sky-400 transition">Data Arc</a>
+        <a href="../../trader-note.html" class="hover:text-sky-400 transition">Trader's Note</a>
+      </nav>
+      <div class="lang-switcher-cluster">
+        <div class="lang-switcher notranslate" id="lang-switcher" translate="no">
+          <select class="lang-switcher-select notranslate" aria-label="Language" translate="no">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="zh-CN">简体中文</option>
+            <option value="ja">日本語</option>
+            <option value="hi">हिन्दी</option>
+            <option value="pt">Português (Brasil)</option>
+          </select>
+        </div>
+        <button type="button" class="js-subscribe subscribe-btn bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold px-4 py-2 rounded-lg transition" data-member-open>Subscribe</button>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-6 py-10 w-full">
+    <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-8">
+      <article class="space-y-6 min-w-0">
+        <div class="text-xs text-slate-500 space-x-2">
+          <a href="../../academy.html" class="hover:text-sky-400">트레이딩 교실</a>
+          <span>/</span>
+          <a href="../../intermediate.html" class="hover:text-sky-400">중급자 시스템 원칙 과정</a>
+          <span>/</span>
+          <span class="text-slate-400">1-4</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <a href="../../beginner.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">왕초보</a>
+        <a href="../../intermediate.html" class="course-pill is-active bg-slate-200 border-slate-200 text-slate-950 text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">중급자</a>
+        <a href="../../advanced.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">고급</a>
+        <a href="../../psychology.html" class="course-pill text-[11px] font-semibold px-3 py-1.5 rounded-full transition border">심리지혜</a>
+        </div>
+        <section class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] font-semibold text-slate-300 bg-slate-800 border border-slate-700 px-2 py-0.5 rounded">Stage 2</span>
+            <span class="text-xs text-slate-500">4 / 40</span>
+          </div>
+          <h1 class="text-2xl md:text-3xl font-normal font-serif-title text-white leading-snug">중급 1-4. 이동평균선 심화 — EMA Ribbon, MA Slope, Trend Strength</h1>
+        </section>
+        <div class="inner-box-bg rounded-xl p-5 border-l-2 border-slate-500 space-y-2">
+          <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">한눈에 답</p>
+          <p class="text-sm text-slate-300 leading-relaxed">왕초보 과정의 20/50/200MA가 &quot;가격이 선 위인가 아래인가&quot;만 봤다면, 중급의 EMA Ribbon은 여러 개의 EMA를 겹쳐 추세의 &quot;정렬 상태&quot;를 보고, MA Slope는 선의 &quot;기울기&quot;로 추세의 힘을, Trend Strength는 이 둘을 수치화해 지금 추세에 올라타도 되는지 객관적으로 판단하는 도구입니다.</p>
+        </div>
+        <nav class="toc-mini inner-box-bg rounded-xl p-4 space-y-2">
+          <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">이 강의에서</p>
+          <ol class="space-y-1.5 text-xs">
+            <li><a href="#1-왜-이-개념을-정확히-알아야-하는가">1. 왜 이 개념을 정확히 알아야 하는가</a></li>
+            <li><a href="#2-ema-ribbon-ema-리본">2. EMA Ribbon(EMA 리본)</a></li>
+            <li><a href="#3-ma-slope-이동평균선-기울기">3. MA Slope(이동평균선 기울기)</a></li>
+            <li><a href="#4-trend-strength-추세-강도-점수화">4. Trend Strength(추세 강도) 점수화</a></li>
+            <li><a href="#5-정밀-진입-타점">5. 정밀 진입 타점</a></li>
+            <li><a href="#6-손절-익절-기준">6. 손절·익절 기준</a></li>
+            <li><a href="#7-가짜-시그널-구분법">7. 가짜 시그널 구분법</a></li>
+            <li><a href="#8-실전-if-then-체크리스트">8. 실전 If-Then 체크리스트</a></li>
+            <li><a href="#9-결론">9. 결론</a></li>
+          </ol>
+        </nav>
+        <div class="lesson-body">
+          <h2 id="1-왜-이-개념을-정확히-알아야-하는가">1. 왜 이 개념을 정확히 알아야 하는가</h2>
+<p>왕초보 과정에서 배운 20/50/200MA는 이진법입니다. 가격이 위에 있으면 상승, 아래면 하락입니다. 하지만 실전에서는 &quot;가격이 20MA 위에 있지만 20MA 자체가 아래로 꺾이고 있는&quot; 애매한 상황이 자주 나옵니다. 이런 상황에서 단순히 &quot;위에 있으니 상승&quot;이라고 판단하면 추세 전환 직전에 진입하는 실수를 하게 됩니다.</p>
+<p>EMA Ribbon과 MA Slope, Trend Strength는 이 애매함을 없애고, 추세의 방향뿐 아니라 &quot;얼마나 강하게, 얼마나 질서 있게&quot; 움직이고 있는지를 함께 읽는 도구입니다.</p>
+<h2 id="2-ema-ribbon-ema-리본">2. EMA Ribbon(EMA 리본)</h2>
+<h3 id="2-1-정의">2-1. 정의</h3>
+<p>EMA Ribbon은 여러 개의 지수이동평균선(EMA)을 한 차트에 동시에 그려서 그 배열 순서를 보는 기법입니다. 흔히 8, 13, 21, 34, 55, 89일 EMA(피보나치 수열 기반)를 함께 사용하며, 단순이동평균(SMA)보다 최근 가격에 가중치를 더 주는 EMA를 쓰기 때문에 반응 속도가 빠릅니다.</p>
+<h3 id="2-2-심리-구조-리본이-왜-정렬-을-보여주는가">2-2. 심리 구조: 리본이 왜 &quot;정렬&quot;을 보여주는가</h3>
+<p>각 EMA는 서로 다른 기간의 평균 매수 단가를 나타냅니다. 8일 EMA는 최근 8일간 매수한 사람들의 평균가, 89일 EMA는 최근 89일간 매수한 사람들의 평균가에 가깝습니다.</p>
+<p>정상적인 강한 상승 추세에서는 짧은 기간 EMA가 위에, 긴 기간 EMA가 아래에 순서대로 정렬됩니다(8&gt;13&gt;21&gt;34&gt;55&gt;89). 이는 &quot;최근에 산 사람일수록 더 높은 가격에 샀다&quot;는 뜻이며, 매수세가 지속적으로 유입되고 있다는 증거입니다. 반대로 이 순서가 뒤섞이기 시작하면(예: 21일 EMA가 13일 EMA를 뚫고 올라오면) 최근 매수 강도가 약해지고 있다는 조기 경고 신호입니다.</p>
+<h3 id="2-3-리본으로-읽는-시장-상태">2-3. 리본으로 읽는 시장 상태</h3>
+<div class="table-wrap"><table><thead><tr><th>리본 상태</th><th>의미</th><th>대응</th></tr></thead><tbody><tr><td>완전 정렬(단기&gt;장기, 간격 넓음)</td><td>강한 추세, 매수세 지속</td><td>추세 추종, 눌림목 매수</td></tr><tr><td>정렬되었으나 간격이 좁아짐(수렴)</td><td>추세 둔화 초입</td><td>신규 진입 자제, 기존 포지션 부분 익절 검토</td></tr><tr><td>리본이 꼬이기 시작(교차 발생)</td><td>힘의 균형 무너짐</td><td>관망, 방향 재확인 필요</td></tr><tr><td>리본이 역전(단기&lt;장기)</td><td>추세 전환 가능성</td><td>반대 방향 검토, 단 확인 캔들 필수</td></tr></tbody></table></div>
+<h2 id="3-ma-slope-이동평균선-기울기">3. MA Slope(이동평균선 기울기)</h2>
+<h3 id="3-1-정의">3-1. 정의</h3>
+<p>MA Slope는 이동평균선(대개 20일 또는 50일)이 일정 기간 동안 얼마나 가파르게 상승 또는 하락하고 있는지를 각도 혹은 변화율로 측정하는 것입니다. 정밀하게는 &quot;N일 전 MA 값 대비 현재 MA 값의 변화율(%)&quot;로 계산합니다.</p>
+<h3 id="3-2-왜-기울기가-위치보다-중요한가">3-2. 왜 기울기가 위치보다 중요한가</h3>
+<p>가격이 20MA 위에 있어도, 20MA 자체가 거의 평평하거나 아래로 꺾이고 있다면 그 상승은 힘이 빠진 상승입니다. 기울기는 추세의 &quot;가속도&quot;를 보여줍니다. 기관이 지속적으로 매수하고 있다면 MA는 계속 가파르게 우상향하고, 매수세가 멈추면 MA가 평평해지기 시작합니다.</p>
+<p>계산 예시: 20일 EMA가 5거래일 전 145달러였고 현재 152달러라면, 변화율은 (152-145)/145×100=약 4.8%입니다. 5거래일 만에 20EMA가 4.8% 상승했다면 강한 추세로 분류하고, 1% 미만이면 추세가 약화되고 있다고 판단합니다.</p>
+<h3 id="3-3-실전-활용-기울기-감소-조기-경고">3-3. 실전 활용: 기울기 감소 = 조기 경고</h3>
+<p>가격이 신고가를 경신하는 중에도 20MA의 기울기가 이전보다 완만해지고 있다면, 이는 &quot;가격은 오르지만 매수 속도는 느려지고 있다&quot;는 다이버전스 신호입니다. 이 신호는 실제 가격 하락보다 먼저 나타나는 경우가 많아, 익절 타이밍을 앞당기는 근거로 활용합니다.</p>
+<h2 id="4-trend-strength-추세-강도-점수화">4. Trend Strength(추세 강도) 점수화</h2>
+<h3 id="4-1-정의">4-1. 정의</h3>
+<p>Trend Strength는 EMA Ribbon의 정렬 상태와 MA Slope를 결합해 추세의 신뢰도를 0~100점 정도로 점수화하는 접근입니다. 정식 지표명으로는 ADX(Average Directional Index)를 함께 참고하는 것이 실전에서 널리 쓰입니다.</p>
+<h3 id="4-2-간단한-3요소-점수화-방법">4-2. 간단한 3요소 점수화 방법</h3>
+<div class="table-wrap"><table><thead><tr><th>요소</th><th>배점</th><th>조건</th></tr></thead><tbody><tr><td>EMA 정렬 상태</td><td>40점</td><td>6개 EMA가 완전 정렬이면 40점, 부분 정렬이면 20점, 역전이면 0점</td></tr><tr><td>MA Slope</td><td>40점</td><td>20EMA 5일 변화율 3% 이상이면 40점, 1~3%면 20점, 1% 미만이면 0점</td></tr><tr><td>ADX 값</td><td>20점</td><td>ADX 25 이상이면 20점, 20~25면 10점, 20 미만이면 0점(추세 없음, 레인지 장)</td></tr></tbody></table></div>
+<p>세 요소를 더해 70점 이상이면 &quot;추세 추종 전략&quot;을 우선 적용하고, 40점 미만이면 &quot;레인지 전략&quot;으로 전환하는 것이 원칙입니다. ADX 자체가 20 미만이면 추세가 없는 횡보 국면이라는 뜻이므로, 이동평균선 기반 추세 매매 자체를 잠시 보류합니다.</p>
+<h2 id="5-정밀-진입-타점">5. 정밀 진입 타점</h2>
+<p>EMA Ribbon이 완전 정렬 상태이고 Trend Strength 점수가 70점 이상일 때, 가격이 짧은 기간 EMA(8일 또는 13일)까지 눌림목 조정을 보이면 진입 후보로 삼습니다. 이때 왕초보 과정에서 배운 Pin Bar나 Engulfing 패턴이 그 눌림목 구간에서 확인되면 신뢰도가 더 높아집니다.</p>
+<h2 id="6-손절-익절-기준">6. 손절·익절 기준</h2>
+<p>손절은 진입에 사용한 눌림목 EMA(예: 13일 EMA)를 명확히 이탈하는 종가 기준으로 설정합니다. 리본이 정렬을 유지하는 한 포지션을 유지하고, 리본이 꼬이기 시작하면(3-3항의 &quot;정렬 붕괴&quot; 상태) 부분 익절을 고려합니다.</p>
+<p>예시: 진입가 155달러, 13일 EMA가 151달러라면 리스크는 주당 4달러입니다. Trend Strength 70점 이상의 강한 추세에서는 목표 손익비를 1:3 이상으로 넉넉히 잡을 수 있으며, 목표가는 165달러(주당 10달러 수익) 근처로 설정합니다.</p>
+<h2 id="7-가짜-시그널-구분법">7. 가짜 시그널 구분법</h2>
+<ul><li><strong>일시적 정렬</strong>: EMA가 잠깐 정렬되었다가 하루 만에 다시 꼬이는 경우, 이는 단기 변동성일 뿐 진짜 추세 전환이 아닙니다. 최소 3거래일 이상 정렬이 유지되는지 확인합니다.</li><li><strong>Slope는 가파른데 ADX는 낮은 경우</strong>: 단기 급등으로 MA 기울기가 잠깐 가팔라졌지만 ADX가 여전히 20 미만이라면, 지속성 없는 일회성 스파이크일 가능성이 큽니다.</li><li><strong>거래량 없는 리본 정렬</strong>: 리본이 정렬되어도 거래량이 뒷받침되지 않으면 진짜 매수세 유입이 아니라 단순 가격 관성일 수 있습니다.</li></ul>
+<h2 id="8-실전-if-then-체크리스트">8. 실전 If-Then 체크리스트</h2>
+<ul><li class="task"><input type="checkbox" disabled>IF EMA Ribbon이 완전 정렬 상태인가(최소 3거래일 유지) → THEN 진행, 아니면 관망</li><li class="task"><input type="checkbox" disabled>IF MA Slope(20EMA 5일 변화율)가 3% 이상인가 → THEN 진행, 아니면 포지션 축소</li><li class="task"><input type="checkbox" disabled>IF ADX가 25 이상인가 → THEN 진행, 아니면 추세매매 보류</li><li class="task"><input type="checkbox" disabled>IF Trend Strength 점수가 70점 이상인가 → THEN 진입 후보 등록</li><li class="task"><input type="checkbox" disabled>IF 눌림목 구간에서 반전 캔들 패턴이 확인되는가 → THEN 진입, 아니면 대기</li><li class="task"><input type="checkbox" disabled>IF 손익비가 1:2 이상 확보되는가 → THEN 진입, 아니면 스킵</li></ul>
+<h2 id="9-결론">9. 결론</h2>
+<p>EMA Ribbon은 추세의 &quot;질서&quot;를, MA Slope는 추세의 &quot;속도&quot;를, Trend Strength는 이 둘을 합쳐 &quot;지금 올라타도 되는 추세인가&quot;를 객관적으로 판단하게 해줍니다. 왕초보 과정의 단순한 &quot;위/아래&quot; 판단에서 벗어나, 추세의 질을 수치로 검증하는 습관을 들이는 것이 중급 과정의 핵심입니다. 다음 시간에는 갭(Gap) 심화 — Gap Fill, Gap Hold, Breakaway Gap을 다룹니다.</p>
+        </div>
+        <div class="pt-6 border-t border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <a href="1-3.html" class="lesson-link rounded-xl p-4 space-y-1 transition">
+            <p class="text-[11px] text-slate-500">&larr; 이전 강의</p>
+            <p class="text-sm text-white font-medium">중급 1-3. 지지·저항 심화 — Supply/Demand Zone과 Liquidity Zone</p>
+          </a>
+          <a href="1-5.html" class="lesson-link rounded-xl p-4 space-y-1 transition md:text-right">
+            <p class="text-[11px] text-slate-500">다음 강의 &rarr;</p>
+            <p class="text-sm text-white font-medium">중급 1-5. 갭(Gap) 심화 — Gap Fill, Gap Hold, Breakaway Gap</p>
+          </a>
+        </div>
+      </article>
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 space-y-3">
+          <div class="flex items-center justify-between px-1">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">과정 목차</p>
+            <a href="../../intermediate.html" class="text-[11px] text-sky-400 hover:text-sky-300">전체 보기</a>
+          </div>
+          <div class="card-bg rounded-2xl p-3 max-h-[calc(100vh-8rem)] overflow-y-auto space-y-3">
+            
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">차트 심화 <span class="text-[10px] font-medium text-amber-400/80">🔒 2강 잠김</span></p>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="1-1.html">1-1. 중급 1-1. 고급 캔들 패턴의 심리 구조와 실전 매매 전략 — Engulfing, Pin Bar, Doji</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="1-2.html">1-2. 중급 1-2. 다중 타임프레임(MTF) 분석 — 일봉·4시간봉·1시간봉·15분봉 연계 전략</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="1-3.html">1-3. 중급 1-3. 지지·저항 심화 — Supply/Demand Zone과 Liquidity Zone</a>
+            <a class="sidebar-link is-current block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="1-4.html">1-4. 중급 1-4. 이동평균선 심화 — EMA Ribbon, MA Slope, Trend Strength</a>
+            <a class="sidebar-link block text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent truncate" href="1-5.html">1-5. 중급 1-5. 갭(Gap) 심화 — Gap Fill, Gap Hold, Breakaway Gap</a>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">1-6. 중급 1-6. 되돌림 비율 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">1-7. 중급 1-7. 차트 패턴 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">시장 구조와 유동성 <span class="lock-icon" aria-hidden="true">🔒</span></p>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">2-1. 중급 2-1. 시장 구조 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">2-2. 중급 2-2. 알고리즘 행동 패턴</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">2-3. 중급 2-3. 거래량 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">2-4. 중급 2-4. 변동성 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">2-5. 중급 2-5. 유동성 분석</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">2-6. 중급 2-6. 시장 참여자 구조</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">실전 매매 전략 <span class="lock-icon" aria-hidden="true">🔒</span></p>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-1. 중급 3-1. 상대강도 기반 종목 선정</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-2. 중급 3-2. 뉴스·실적 스크리닝</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-3. 중급 3-3. 장세 식별</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-4. 중급 3-4. 장세별 전략 스위칭</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-5. 중급 3-5. 데이 트레이딩 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-6. 중급 3-6. 스윙 트레이딩 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-7. 중급 3-7. 돌파 전략</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-8. 중급 3-8. 반전 전략</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-9. 중급 3-9. 트레이딩 툴 실전</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">3-10. 중급 3-10. 스크리너 세팅</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">리스크·자금 관리 <span class="lock-icon" aria-hidden="true">🔒</span></p>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">4-1. 중급 4-1. 변동성 기반 손절</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">4-2. 중급 4-2. 트레일링 스탑</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">4-3. 중급 4-3. 포지션 사이징 심화</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">4-4. 중급 4-4. 자금 관리</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">4-5. 중급 4-5. 일일 손실 한도 설정</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">4-6. 중급 4-6. 계좌 보호 시스템</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">심리와 규율 <span class="lock-icon" aria-hidden="true">🔒</span></p>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">5-1. 중급 5-1. 감정 통제 실전</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">5-2. 중급 5-2. 손실 한도 준수 훈련</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">5-3. 중급 5-3. 손실 후 복구 전략</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">5-4. 중급 5-4. 매매 규율</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">5-5. 중급 5-5. 외부 자극 차단</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">5-6. 중급 5-6. 실수 방지 시스템</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+          </div>
+
+          <div class="space-y-1.5">
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2.5 pt-2">시스템 트레이딩 <span class="lock-icon" aria-hidden="true">🔒</span></p>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">6-1. 중급 6-1. 매매 전략 설계</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">6-2. 중급 6-2. 전략 백테스트 기초</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">6-3. 중급 6-3. 전략 필터링</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">6-4. 중급 6-4. 실전 적용</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+            <button type="button" class="sidebar-link lesson-locked block w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg border border-transparent" data-member-gate><span class="lock-icon" aria-hidden="true">🔒</span><span class="truncate">6-5. 중급 6-5. 시스템 트레이딩 사고방식</span> <span class="member-access">[ 🔒 Member Access ]</span></button>
+          </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  
+  <footer class="border-t border-slate-800 py-8 mt-12 bg-[#0b0f17]">
+    <div class="max-w-7xl mx-auto px-6 text-center text-xs text-slate-500 space-y-4">
+      <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2" aria-label="Legal">
+        <a href="../../about.html" class="hover:text-sky-400 transition">About</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../contact.html" class="hover:text-sky-400 transition">Contact</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../privacy.html" class="hover:text-sky-400 transition">Privacy Policy</a>
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+        <a href="../../terms.html" class="hover:text-sky-400 transition">Terms of Use</a>
+      </nav>
+      <p>© 2026 DawnQT Research. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <div id="member-gate-modal" class="member-modal" hidden>
+    <div class="member-modal-backdrop" data-member-close></div>
+    <div class="member-modal-card member-modal-card--beehiiv" role="dialog" aria-modal="true" aria-labelledby="member-gate-title" tabindex="-1">
+      <button type="button" class="member-modal-x" data-member-close aria-label="닫기">×</button>
+      <p class="member-modal-kicker">Member Access</p>
+      <h2 id="member-gate-title">멤버십 전용 강의</h2>
+      <p class="member-modal-copy">DawnQT Intelligence Hub 멤버십 전용 강의입니다. 이메일 구독 시 순차적으로 열람 권한이 제공됩니다.</p>
+      <div class="beehiiv-embed-wrap beehiiv-embed-wrap--modal" data-beehiiv-mount></div>
+    </div>
+  </div>
+  <script src="../../js/lang-selector.js" defer></script>
+  <script src="../../js/membership.js" defer></script>
+  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "hero": {
+    "category": "Daily Focus",
+    "title": "What the latest CPI print means for rate paths & AI infrastructure capital flows",
+    "meta": "By Editorial · 8 min read · Aug 15, 2026. 기술주 중심의 변동성 확대 구간에서 수급 유입 흐름과 핵심 체크 지표 3가지를 정밀 분석합니다.",
+    "points": [
+      { "title": "1. 나스닥 변동성", "desc": "CPI 발표 앞두고 관망세 짙은 가운데 반도체 섹터 반등." },
+      { "title": "2. 수급 이상 징후", "desc": "빅테크 대형주 대비 소형 성장주 거래량 급증." },
+      { "title": "3. 대응 전략", "desc": "주요 손절 라인 준수 및 1차 반익절 타점 대기." }
+    ]
+  },
+  "market": {
+    "sp500": "+0.42% ▲",
+    "nasdaq": "+0.85% ▲",
+    "yield10y": "4.18% ▼"
+  },
+  "academy": {
+    "stage1": {
+      "title": "왕초보 실전 교실",
+      "tag": "20강 기초 과정",
+      "desc": "시장의 언어부터 재무제표, 차트, 리스크 관리까지. 실전 전에 고정해야 할 기준.",
+      "link": "beginner.html"
+    },
+    "stage2": {
+      "title": "중급자 시스템 원칙 과정",
+      "tag": "40강 시스템 과정",
+      "desc": "차트 심화, 시장 구조, 전략 스위칭. If-Then 규칙으로 매매 기준을 고정합니다.",
+      "link": "intermediate.html"
+    },
+    "stage3": {
+      "title": "고급 실전 마스터 과정",
+      "tag": "35강 마스터 과정",
+      "desc": "미시구조, 옵션 흐름, 전략 엔진. 수급 위에서 룰 기반 시스템을 운영합니다.",
+      "link": "advanced.html"
+    },
+    "stage4": {
+      "title": "심리지혜 교재",
+      "tag": "20-Lecture Wisdom Course",
+      "desc": "승자의 착각부터 손절 회피, FOMO, 규율까지. 마음이 계좌를 무너뜨리는 장면.",
+      "link": "psychology.html"
+    }
+  },
+  "signals": [
+    "> NVDA: Squeeze Release (BUY)",
+    "> TSLA: Vol Surge +140%"
+  ]
+}

@@ -1,0 +1,157 @@
+/* DawnQT Intelligence Hub — membership gate modal */
+body.member-modal-open { overflow: hidden; }
+
+.member-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+.member-modal[hidden] { display: none !important; }
+
+.member-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.member-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 26.5rem;
+  background:
+    radial-gradient(120% 80% at 0% 0%, rgba(14, 165, 233, 0.12), transparent 55%),
+    linear-gradient(180deg, #1a2436 0%, #121826 100%);
+  border: 1px solid #334155;
+  border-radius: 1.15rem;
+  padding: 1.7rem 1.5rem 1.4rem;
+  outline: none;
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.08),
+    0 28px 64px rgba(0, 0, 0, 0.55);
+}
+
+.member-modal-card--beehiiv {
+  max-width: min(28.5rem, calc(100vw - 1.5rem));
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  padding: 1.5rem 1.15rem 1.1rem;
+}
+
+.member-modal-card--beehiiv .member-modal-copy {
+  margin-bottom: 0.85rem;
+}
+
+.member-modal-x {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #334155;
+  border-radius: 0.55rem;
+  background: #0b1220;
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.member-modal-x:hover {
+  color: #fff;
+  border-color: #64748b;
+  background: #111827;
+}
+
+.member-modal-kicker {
+  margin: 0 0 0.55rem;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #38bdf8;
+}
+
+.member-modal-card h2 {
+  margin: 0 0 0.7rem;
+  font-family: "Instrument Serif", serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: #f8fafc;
+  line-height: 1.3;
+}
+
+.member-modal-copy {
+  margin: 0 0 1.15rem;
+  color: #cbd5e1;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.member-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.member-modal-form input[type="email"] {
+  width: 100%;
+  height: 2.7rem;
+  padding: 0 0.9rem;
+  border: 1px solid #334155;
+  border-radius: 0.7rem;
+  background: #0b0f17;
+  color: #f8fafc;
+  font-size: 0.8125rem;
+  outline: none;
+  -webkit-user-select: text;
+  user-select: text;
+}
+.member-modal-form input[type="email"]::placeholder { color: #64748b; }
+.member-modal-form input[type="email"]:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18);
+}
+.member-modal-form input.is-invalid {
+  border-color: #f87171;
+}
+
+.member-modal-primary {
+  width: 100%;
+  height: 2.7rem;
+  border: 0;
+  border-radius: 0.7rem;
+  background: #0ea5e9;
+  color: #020617;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.member-modal-primary:hover { background: #38bdf8; }
+.member-modal-primary:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.member-modal-hint,
+.member-modal-status {
+  margin: 0.7rem 0 0;
+  font-size: 11px;
+  line-height: 1.55;
+  color: #64748b;
+}
+.member-modal-status.is-error { color: #fca5a5; }
+.member-modal-status.is-ok { color: #6ee7b7; }
+
+.member-modal-card.is-success .member-modal-form { display: none; }
+.member-modal-card.is-success .member-modal-hint { display: none; }
